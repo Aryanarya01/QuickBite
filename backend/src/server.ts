@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/",(req,res)=>{
-  res.send("working");
+  res.send("working!");
 })
 
 
