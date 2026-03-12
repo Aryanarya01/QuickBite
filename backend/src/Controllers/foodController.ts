@@ -3,7 +3,7 @@ import { Food } from "../models/foodModel.js";
 import { json } from "node:stream/consumers";
 
 
-
+//                                      Create Food(admin)
 export const createFood = async(req:Request,res:Response)=>{
     try{
         const {name,price,description,image,category} = req.body;
@@ -23,5 +23,15 @@ export const createFood = async(req:Request,res:Response)=>{
         })
     }catch(err){
         res.status(500).json({message : "Error Creating Food!"});
+    }
+}
+
+//                              getall Food
+
+export const getAllFood = async(req:Request,res:Response)=>{
+    try{
+
+    }catch(err){
+        res.status(500).json({message : "Error fetching food!"});
     }
 }
