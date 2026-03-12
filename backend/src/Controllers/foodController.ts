@@ -1,6 +1,5 @@
 import type { Request, Response } from "express";
 import { Food } from "../models/foodModel.js";
-import { json } from "node:stream/consumers";
 
 
 //                                      Create Food(admin)
@@ -26,12 +25,20 @@ export const createFood = async(req:Request,res:Response)=>{
     }
 }
 
-//                              getall Food
+//                              GetAll Food
 
 export const getAllFood = async(req:Request,res:Response)=>{
     try{
-
+        const foods = await Food.find();
+        if(!foods){
+            res.status(400).json({message : "No Existing Food!"});
+            return;
+        }
+        res.json(foods);
     }catch(err){
         res.status(500).json({message : "Error fetching food!"});
     }
 }
+
+//                      get single food
+expo
