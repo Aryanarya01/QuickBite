@@ -31,7 +31,7 @@ export const getAllFood = async(req:Request,res:Response)=>{
     try{
         const foods = await Food.find();
         if(!foods){
-            res.status(400).json({message : "No Existing Food!"});
+            res.status(404).json({message : "No Existing Food!"});
             return;
         }
         res.json(foods);
@@ -41,4 +41,26 @@ export const getAllFood = async(req:Request,res:Response)=>{
 }
 
 //                      get single food
-expo
+export const getFoodById = async(req:Request,res:Response)=>{
+    try{
+        const food = await Food.findById(req.params.id);
+        if(!food){
+            res.status(404).json({"Food not found!"});
+            return;
+        }
+        res.status(201).json(food);
+
+    }catch(err){
+        res.status(500).json({message : "Error fetching food!"});
+    }
+}
+
+//                              delete food
+export const deleteFood = async(req:Request,res:Response)=>{
+    try{
+        await Food.findByIdAndDelete(req.params.id);
+        res.status(200).json({message : "Food deleted!"})
+    }catch(err){
+        res.status(500).json({message : "Error deleteing food!"});
+    }
+}
