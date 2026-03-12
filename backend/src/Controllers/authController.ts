@@ -2,7 +2,7 @@ import type { NextFunction, Request, Response } from "express";
 import { User } from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 
-
+//                          Register function
 export const register = async(req:Request,res:Response,next:NextFunction):Promise<void>=>{
     try{
         const {name,email,password} = req.body;
@@ -21,7 +21,11 @@ export const register = async(req:Request,res:Response,next:NextFunction):Promis
             email,
             password : hashedPassword,
         });
-        res
+        res.status(200).json({message:"User registered successfully!",
+            id : user._id,
+            name : user.name,
+            email : user.email,
+        });
     }catch(err){
         res.status(500).json({message : "Server Error!"});
     }
