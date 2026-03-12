@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IOrder } from "../types/types.js";
+import type { IOrder } from "../types/types.js";
 
 const orderSchema = new mongoose.Schema(
   {
