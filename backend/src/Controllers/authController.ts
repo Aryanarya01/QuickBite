@@ -53,7 +53,16 @@ export const Login = async(req:Request,res:Response,next:NextFunction)=>{
         const token = jwt.sign({id : user._id},process.env.JWT_SECRET as string,{
             expiresIn :"7d"
         });
-        res.
+        res.cookie("token",token,{
+            httpOnly : true,
+            secure : false,
+            maxAge : 7 * 24 * 60 * 60 * 1000,
+        });
+        res.status(200).json({message:"Login Successfully!",
+            id : user._id,
+            name : user.name,
+            email : user.email,
+        })
     }catch(err){
         res.status(500).json({message:"Server Error!"});
     }
