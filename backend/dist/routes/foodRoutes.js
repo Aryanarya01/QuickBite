@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { isAdmin } from "../middleware/admin.js";
-import { createFood, deleteFood, getAllFood, getFoodById } from "../Controllers/foodController.js";
+import { createFood, deleteFood, getAllFood, getFoodById, } from "../Controllers/foodController.js";
 import { Protect } from "../middleware/protect.js";
 const router = Router();
 router.post("/", Protect, isAdmin, createFood); //admin only

@@ -1,1 +1,1 @@
-{"version":3,"file":"foodRoutes.d.ts","sourceRoot":"","sources":["../../src/routes/foodRoutes.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,SAAS,CAAC;AAM7B,QAAA,MAAM,MAAM,EAAC,MAAiB,CAAC;AAU/B,eAAe,MAAM,CAAC"}
+{"version":3,"file":"foodRoutes.d.ts","sourceRoot":"","sources":["../../src/routes/foodRoutes.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,MAAM,SAAS,CAAC;AAUjC,QAAA,MAAM,MAAM,EAAE,MAAiB,CAAC;AAQhC,eAAe,MAAM,CAAC"}
