@@ -3,7 +3,7 @@ import { User } from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 
 //                          Register function
-export const register = async(req:Request,res:Response,next:NextFunction):Promise<void>=>{
+export const Register = async(req:Request,res:Response,next:NextFunction):Promise<void>=>{
     try{
         const {name,email,password} = req.body;
         if(!name||!email||!password){
@@ -28,5 +28,16 @@ export const register = async(req:Request,res:Response,next:NextFunction):Promis
         });
     }catch(err){
         res.status(500).json({message : "Server Error!"});
+    }
+}
+
+
+//                                  Login function
+export const Login = async(req:Request,res:Response,next:NextFunction)=>{
+    try{
+        const {email,password} = req.body;
+        
+    }catch(err){
+        res.status(500).json({message:"Server Error!"});
     }
 }
