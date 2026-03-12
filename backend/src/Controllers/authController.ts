@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { User } from "../models/userModel.js";
 import bcrypt from "bcryptjs";
-
+import jwt from "jsonwebtoken";
 //                          Register function
 export const Register = async(req:Request,res:Response,next:NextFunction):Promise<void>=>{
     try{
@@ -10,7 +10,7 @@ export const Register = async(req:Request,res:Response,next:NextFunction):Promis
             res.status(400).json({message : "All fields required!"});
             return;
         }
-        const existingUser = await User.find({email});
+        const existingUser = await User.findOne({email});
         if(existingUser){
             res.status(400).json({message : "User Already exists!"});
             return;
@@ -36,7 +36,24 @@ export const Register = async(req:Request,res:Response,next:NextFunction):Promis
 export const Login = async(req:Request,res:Response,next:NextFunction)=>{
     try{
         const {email,password} = req.body;
-        
+        if(!email||!password){
+            res.status(400).json({message:"All fields required!"});
+            return;
+        }
+        const user = await User.findOne({email});
+        if(!user){
+            res.status(400).json({message : "User not exists!"});
+            return;
+        }
+        const isMatch = await bcrypt.compare(password,user.password);
+        if(!isMatch){
+            res.status(400).json({message : "Invalid Credentials!"});
+            return;
+        }
+        const token = jwt.sign({id : user._id},process.env.JWT_SECRET as string,{
+            expiresIn :"7d"
+        });
+        res.
     }catch(err){
         res.status(500).json({message:"Server Error!"});
     }
