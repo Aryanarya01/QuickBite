@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { IOrder } from "../types/types.js";
 
 const orderSchema = new mongoose.Schema({
     user :{
@@ -38,3 +39,5 @@ const orderSchema = new mongoose.Schema({
         },
 },
 {timestamps : true})
+
+export const Order = mongoose.model<IOrder>("Order",orderSchema);
