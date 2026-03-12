@@ -1,6 +1,15 @@
+import { Document } from "mongoose";
 export interface IUser extends Document {
   name: string;
   email: string;
   password: string;
   role: "user" | "admin";
+}
+
+export interface IFood extends Document{
+    name : string,
+    price : number,
+    description : string,
+    image : string,
+    category : string,
 }
