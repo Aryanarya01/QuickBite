@@ -80,3 +80,13 @@ export const Login = async (
     res.status(500).json({ message: "Server Error!" });
   }
 };
+
+
+//                                              Logout function
+export const Logout = (req:Request,res:Response)=>{
+    try{
+
+    }catch(err){
+        res.status(500).json({message :"Server Error!"});
+    }
+}
