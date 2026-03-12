@@ -41,7 +41,7 @@ export const getFoodById = async (req, res) => {
     try {
         const food = await Food.findById(req.params.id);
         if (!food) {
-            res.status(404).json({ "Food not found!":  });
+            res.status(404).json({ message: "Food not found!" });
             return;
         }
         res.status(201).json(food);
