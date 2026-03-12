@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { isAdmin } from "../middleware/admin.js";
-import { createFood, deleteFood, getAllFood } from "../Controllers/foodController.js";
+import { createFood, deleteFood, getAllFood, getFoodById } from "../Controllers/foodController.js";
 import { Protect } from "../middleware/protect.js";
 
 
@@ -12,4 +12,6 @@ import { Protect } from "../middleware/protect.js";
 
 
     router.get("/",getAllFood);
-    router.get
+    router.get("/:id",getFoodById);
+
+    export default router;
