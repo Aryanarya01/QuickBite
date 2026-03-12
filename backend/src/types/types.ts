@@ -20,5 +20,9 @@ export interface IItem extends Document{
     price : number,
 }
 export interface IOrder extends Document{
-
+     user : mongoose.Types.ObjectId,
+     items : IItem[],
+     totalPrice : number,
+     address :string,
+     status : "pending"|"confirmed"|"delivered";
 }
