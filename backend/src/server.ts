@@ -10,6 +10,13 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
+app.get("/",(req,res)=>{
+  res.send("working");
+})
+
+
 app.listen(port, () => {
   console.log(`App is listining to port ${port}`);
 });
