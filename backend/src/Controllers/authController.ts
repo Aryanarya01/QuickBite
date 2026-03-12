@@ -25,14 +25,12 @@ export const Register = async (
       email,
       password: hashedPassword,
     });
-    res
-      .status(200)
-      .json({
-        message: "User registered successfully!",
-        id: user._id,
-        name: user.name,
-        email: user.email,
-      });
+    res.status(200).json({
+      message: "User registered successfully!",
+      id: user._id,
+      name: user.name,
+      email: user.email,
+    });
   } catch (err) {
     res.status(500).json({ message: "Server Error!" });
   }
@@ -68,25 +66,26 @@ export const Login = async (
       secure: false,
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
-    res
-      .status(200)
-      .json({
-        message: "Login Successfully!",
-        id: user._id,
-        name: user.name,
-        email: user.email,
-      });
+    res.status(200).json({
+      message: "Login Successfully!",
+      id: user._id,
+      name: user.name,
+      email: user.email,
+    });
   } catch (err) {
     res.status(500).json({ message: "Server Error!" });
   }
 };
 
-
 //                                              Logout function
-export const Logout = (req:Request,res:Response)=>{
-    try{
-
-    }catch(err){
-        res.status(500).json({message :"Server Error!"});
-    }
-}
+export const Logout = (req: Request, res: Response) => {
+  try {
+    res.cookie("token", "", {
+      httpOnly: true,
+      expires: new Date(0),
+    });
+    res.status(200).json({ message: "Logout Successfully!" });
+  } catch (err) {
+    res.status(500).json({ message: "Server Error!" });
+  }
+};
