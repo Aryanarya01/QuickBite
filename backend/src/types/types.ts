@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+import mongoose, { Document } from "mongoose";
 export interface IUser extends Document {
   name: string;
   email: string;
@@ -12,4 +12,13 @@ export interface IFood extends Document{
     description : string,
     image : string,
     category : string,
+}
+
+export interface IItem extends Document{
+    food : mongoose.Types.ObjectId,
+    quantity : number,
+    price : number,
+}
+export interface IOrder extends Document{
+
 }
