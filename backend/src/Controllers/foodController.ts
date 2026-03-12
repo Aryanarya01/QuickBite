@@ -57,7 +57,7 @@ export const getFoodById = async(req:Request,res:Response)=>{
 
 //                              delete food
 export const deleteFood = async(req:Request,res:Response)=>{
-    try{
+    try{ 
         await Food.findByIdAndDelete(req.params.id);
         res.status(200).json({message : "Food deleted!"})
     }catch(err){
