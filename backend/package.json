@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
-
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": " concurrently \"tsc -w\" \"nodemon dist/server.js\""
   },
-
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
@@ -19,7 +17,6 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.3.0"
   },
-
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.10",

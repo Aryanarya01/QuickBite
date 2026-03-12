@@ -27,7 +27,7 @@ export const Protect = async (
     }
     req.user = user;
     next();
-  } catch (err) {
+  } catch(err) {
     res.status(500).json({ message: "Server Error!" });
   }
 };
