@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { IFood } from "../types/types.js";
 
 
 const foodSchema = new mongoose.Schema({
@@ -26,3 +27,5 @@ const foodSchema = new mongoose.Schema({
 }
 ,
 {timestamps : true})
+
+export const Food = mongoose.model<IFood>("Food",foodSchema);
