@@ -1,13 +1,17 @@
 import type { NextFunction, Request, Response } from "express";
 
-interface AuthRequest extends Request{
-    user?:any;
+interface AuthRequest extends Request {
+  user?: any;
 }
 
-export const isAdmin = (req:AuthRequest,res:Response,next:NextFunction)=>{
-    if(req.user && req.user.role === "admin"){
-        next();
-    }else{
-        res.status(403).json({message : "Admin access only!"});
-    }
-}
+export const isAdmin = (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction,
+) => {
+  if (req.user && req.user.role === "admin") {
+    next();
+  } else {
+    res.status(403).json({ message: "Admin access only!" });
+  }
+};
