@@ -56,7 +56,11 @@ export const GetMyOrder = async (
 };
 
 
-//                                      getAllOrder
+//                                      getAllOrder(admin)
 export const getAllOrder = async(req:AuthRequest,res:Response,next:NextFunction)=>{
-    
+    try{
+        
+    }catch(err){
+        res.status(500).json({ message : "Failed to fetch all orders!"});
+    }
 }
