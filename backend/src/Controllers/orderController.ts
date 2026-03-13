@@ -77,6 +77,10 @@ export const getAllOrder = async (
 //                  updateOrderStatus(Admin)
 export const updateOrderStatus = async(req:AuthRequest,res:Response,next:NextFunction)=>{
   try{
+    const {status} = req.body;
+    const order = await Order.findByIdAndUpdate(req.params.id,
+      {status},{new : true}
+    );
     
   }catch(err){
     res.status(500).json({message : "Error Updating Status!"});
