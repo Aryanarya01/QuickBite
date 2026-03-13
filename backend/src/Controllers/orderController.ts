@@ -55,17 +55,20 @@ export const GetMyOrder = async (
   }
 };
 
-
 //                                      getAllOrder(admin)
-export const getAllOrder = async(req:AuthRequest,res:Response,next:NextFunction)=>{
-    try{
-        const orders = await Order.find().populate("user").populate("items.food");
-        if(!orders){
-          res.status(400).json({message : "No Orders!"});
-          return;
-        }
-        res.status(201).json(orders)
-    }catch(err){
-        res.status(500).json({ message : "Failed to fetch all orders!"});
+export const getAllOrder = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const orders = await Order.find().populate("user").populate("items.food");
+    if (!orders) {
+      res.status(400).json({ message: "No Orders!" });
+      return;
     }
-}
+    res.status(201).json(orders);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to fetch all orders!" });
+  }
+};
