@@ -1,3 +1,8 @@
+import type { NextFunction, Request, Response } from "express";
 
-
-export const createOrder
+interface AuthRequest extends Request{
+    user?:any;
+}
+export const createOrder = async(req:AuthRequest,res:Response,next:NextFunction)=>{
+    
+}
