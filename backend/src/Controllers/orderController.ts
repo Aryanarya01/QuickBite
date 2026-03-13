@@ -72,3 +72,13 @@ export const getAllOrder = async (
     res.status(500).json({ message: "Failed to fetch all orders!" });
   }
 };
+
+
+//                  updateOrderStatus(Admin)
+export const updateOrderStatus = async(req:AuthRequest,res:Response,next:NextFunction)=>{
+  try{
+    
+  }catch(err){
+    res.status(500).json({message : "Error Updating Status!"});
+  }
+}
