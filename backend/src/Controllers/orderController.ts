@@ -73,22 +73,25 @@ export const getAllOrder = async (
   }
 };
 
-
 //                  updateOrderStatus(Admin)
-export const updateOrderStatus = async(req:AuthRequest,res:Response,next:NextFunction)=>{
-  try{
-    const {status} = req.body;
-    const order = await Order.findByIdAndUpdate(req.params.id,
-      {status},{new : true}
+export const updateOrderStatus = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const { status } = req.body;
+    const order = await Order.findByIdAndUpdate(
+      req.params.id,
+      { status },
+      { new: true },
     );
-    if(!order){
-      res.status(404).json({message : "Order not found!"});
+    if (!order) {
+      res.status(404).json({ message: "Order not found!" });
       return;
     }
-    res.status(200).json({message : "Order Updated!",
-      order
-    })
-  }catch(err){
-    res.status(500).json({message : "Error Updating order!"});
+    res.status(200).json({ message: "Order Updated!", order });
+  } catch (err) {
+    res.status(500).json({ message: "Error Updating order!" });
   }
-}
+};
