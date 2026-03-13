@@ -64,6 +64,7 @@ export const getAllOrder = async(req:AuthRequest,res:Response,next:NextFunction)
           res.status(400).json({message : "No Orders!"});
           return;
         }
+        res.status(201).json(orders)
     }catch(err){
         res.status(500).json({ message : "Failed to fetch all orders!"});
     }
