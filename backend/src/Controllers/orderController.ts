@@ -4,6 +4,8 @@ import { Order } from "../models/orderModel.js";
 interface AuthRequest extends Request {
   user?: any;
 }
+
+//                                  Create Order
 export const createOrder = async (
   req: AuthRequest,
   res: Response,
@@ -32,3 +34,9 @@ export const createOrder = async (
     res.status(500).json({ message: "Order Creation Failed!!" });
   }
 };
+
+
+//                                      GetMyOrder(user)
+export const GetMyOrder = async(req:AuthRequest,res:Response,next:NextFunction)=>{
+    
+}

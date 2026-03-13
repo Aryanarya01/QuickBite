@@ -1,4 +1,5 @@
 import { Order } from "../models/orderModel.js";
+//                                  Create Order
 export const createOrder = async (req, res, next) => {
     try {
         const { items, address } = req.body;
@@ -19,5 +20,8 @@ export const createOrder = async (req, res, next) => {
     catch (err) {
         res.status(500).json({ message: "Order Creation Failed!!" });
     }
+};
+//                                      GetMyOrder(user)
+export const GetMyOrder = async (req, res, next) => {
 };
 //# sourceMappingURL=orderController.js.map
