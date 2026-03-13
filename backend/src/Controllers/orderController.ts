@@ -38,5 +38,9 @@ export const createOrder = async (
 
 //                                      GetMyOrder(user)
 export const GetMyOrder = async(req:AuthRequest,res:Response,next:NextFunction)=>{
-    
+    try{
+
+    }catch(err){
+        res.status(500).json({message : "Failed to fetch orders!"});
+    }
 }

@@ -23,5 +23,10 @@ export const createOrder = async (req, res, next) => {
 };
 //                                      GetMyOrder(user)
 export const GetMyOrder = async (req, res, next) => {
+    try {
+    }
+    catch (err) {
+        res.status(500).json({ message: "Failed to fetch orders!" });
+    }
 };
 //# sourceMappingURL=orderController.js.map
