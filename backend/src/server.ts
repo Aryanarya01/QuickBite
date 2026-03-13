@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import authRouter from "./routes/authRoutes.js"
 import foodRouter from "./routes/foodRoutes.js"
+import orderRouter from "./routes/orderRoutes.js"
 import cookieParser from "cookie-parser";
 
 
@@ -16,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth",authRouter);
 app.use("/api/foods",foodRouter);
-
+app.use("/api/orders",orderRouter);
 app.get("/",(req,res)=>{
   res.send("working!");
 })
