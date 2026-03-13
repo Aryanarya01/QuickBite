@@ -35,4 +35,7 @@ export const GetMyOrder = async (req, res, next) => {
         res.status(500).json({ message: "Failed to fetch orders!" });
     }
 };
+//                                      getAllOrder
+export const getAllOrder = async (req, res, next) => {
+};
 //# sourceMappingURL=orderController.js.map

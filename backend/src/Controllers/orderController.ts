@@ -54,3 +54,9 @@ export const GetMyOrder = async (
     res.status(500).json({ message: "Failed to fetch orders!" });
   }
 };
+
+
+//                                      getAllOrder
+export const getAllOrder = async(req:AuthRequest,res:Response,next:NextFunction)=>{
+    
+}
