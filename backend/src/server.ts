@@ -7,13 +7,10 @@ import orderRouter from "./routes/orderRoutes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-
-
 const app = express();
 const port = process.env.PORT || 5000;
 dotenv.config();
 connectDB();
-
 
 app.use(
   cors({
