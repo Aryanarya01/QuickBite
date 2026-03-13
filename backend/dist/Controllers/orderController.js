@@ -14,9 +14,7 @@ export const createOrder = async (req, res, next) => {
             totalPrice,
             address,
         });
-        res.status(201).json({ message: "Order created sucessfully!",
-            order
-        });
+        res.status(201).json({ message: "Order created sucessfully!", order });
     }
     catch (err) {
         res.status(500).json({ message: "Order Creation Failed!!" });
