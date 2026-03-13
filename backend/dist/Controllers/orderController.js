@@ -1,3 +1,4 @@
+import { Order } from "../models/orderModel.js";
 export const createOrder = async (req, res, next) => {
     try {
         const { items, address } = req.body;
@@ -7,6 +8,15 @@ export const createOrder = async (req, res, next) => {
         }
         //total price calculate
         const totalPrice = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        const order = await Order.create({
+            user: req.user._id,
+            items,
+            totalPrice,
+            address,
+        });
+        res.status(201).json({ message: "Order created sucessfully!",
+            order
+        });
     }
     catch (err) {
         res.status(500).json({ message: "Order Creation Failed!!" });
