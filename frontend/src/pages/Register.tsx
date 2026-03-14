@@ -8,20 +8,20 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handelRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const res = await apiFetch("/auth/register", {
-      method: "POST",
-      body: JSON.stringify({ name, email, password }),
-    });
-    const data = await res.json();
-    if (res.ok) {
-      alert("Registered Successfully! Please Login....");
-      navigate("/login");
-    } else {
-      alert(data.message);
-    }
-  };
+  // const handelRegister = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const res = await apiFetch("/auth/register", {
+  //     method: "POST",
+  //     body: JSON.stringify({ name, email, password }),
+  //   });
+  //   const data = await res.json();
+  //   if (res.ok) {
+  //     alert("Registered Successfully! Please Login....");
+  //     navigate("/login");
+  //   } else {
+  //     alert(data.message);
+  //   }
+  // };
   return (
     <>
       <div>

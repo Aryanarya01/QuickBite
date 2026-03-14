@@ -9,20 +9,35 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { setUser } = useAuth();
 
+  // const handleLogin = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const res = await apiFetch("/auth/login", {
+  //     method: "POST",
+  //     body: JSON.stringify({ email, password }),
+  //   });
+  //   const data = await res.json();
+  //   if (res.ok) {
+  //     setUser(data);
+  //     navigate("/");
+  //   } else {
+  //     alert(data.message);
+  //   }
+  // };
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const res = await apiFetch("/auth/login", {
+  e.preventDefault();
+
+  try {
+    const data = await apiFetch("/auth/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
     });
-    const data = await res.json();
-    if (res.ok) {
-      setUser(data);
-      navigate("/");
-    } else {
-      alert(data.message);
-    }
-  };
+
+    setUser(data);
+    navigate("/");
+  } catch (err: any) {
+    alert(err.message);
+  }
+};
   return (
     <>
       <div>
@@ -36,7 +51,7 @@ const Login = () => {
           <br />
           <br />
           <input
-            type="text"
+            type="password"
             placeholder="Enter Password.."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
