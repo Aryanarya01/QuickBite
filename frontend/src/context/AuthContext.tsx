@@ -8,7 +8,6 @@ import {
 import type { User } from "../types/User";
 import type { AuthContextType } from "../types/AuthContexTypes";
 import { apiFetch } from "../api/api";
-import { data } from "react-router-dom";
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 export const Authprovider = ({ children }: { children: ReactNode }) => {
