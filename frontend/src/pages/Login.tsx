@@ -26,6 +26,13 @@ const Login = ()=>{
     }
     return(
         <>
+        <div>
+            <form onSubmit={handleLogin}>
+                <input type="text" placeholder="Enter Email.." value={email} onChange={(e)=>setEmail(e.target.value)} />
+                <input type="text" placeholder="Enter Password.." value={password} onChange={(e)=>setPassword(e.target.value)} />
+                 
+            </form>
+        </div>
         </>
     )
 }
