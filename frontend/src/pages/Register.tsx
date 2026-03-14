@@ -22,6 +22,21 @@ const Register = () => {
   //     alert(data.message);
   //   }
   // };
+  const handelRegister = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await apiFetch("/auth/register", {
+      method: "POST",
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    alert("Registered Successfully! Please Login....");
+    navigate("/login");
+  } catch (err: any) {
+    alert(err.message);
+  }
+};
   return (
     <>
       <div>
