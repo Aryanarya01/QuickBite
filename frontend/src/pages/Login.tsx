@@ -9,7 +9,7 @@ const Login = ()=>{
 
     const handleLogin = (e:React.FormEvent)=>{
         e.preventDefault()
-        const res
+        const res = await
     }
     return(
         <>
