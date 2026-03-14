@@ -17,19 +17,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   //  Auto login check
   useEffect(() => {
     const checkUser = async () => {
-      try {
-        const res = await apiFetch("/auth/profile");
-        if (res.ok) {
-          const data = await res.json();
-          setUser(data.user);
-        }
-      } catch (err) {
-        console.log("Not Logged in!");
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
+    try {
+      const data = await apiFetch("/auth/profile");
+      setUser(data.user);
+    } catch (err) {
+      console.log("Not Logged in!");
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
     checkUser();
   }, []);
 
@@ -40,11 +37,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null);
   };
 
-  return (
-    <AuthContext.Provider value={{ loading, logout, user, setUser }}>
-      {!loading && children}
-    </AuthContext.Provider>
-  );
+ return (
+  <AuthContext.Provider value={{ loading, logout, user, setUser }}>
+    {children}
+  </AuthContext.Provider>
+);
 };
 
 //              custom hook
