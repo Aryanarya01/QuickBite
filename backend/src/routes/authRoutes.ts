@@ -6,7 +6,7 @@ const router: Router = Router();
 router.post("/register", Register);
 router.post("/login", Login);
 router.get("/profile",Protect,(req:any,res)=>{
-    res.send(req.user);
+    res.json({user :req.user});
 })
 router.post("/logout", Logout);
 
