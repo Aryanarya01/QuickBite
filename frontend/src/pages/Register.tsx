@@ -32,24 +32,30 @@ const Register = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <br /><br />
+          <br />
+          <br />
           <input
             type="email"
             placeholder="Enter Your Email.."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br /><br />
+          <br />
+          <br />
           <input
             type="password"
             placeholder="Enter Your Password.."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <br /><br />
+          <br />
+          <br />
           <button type="submit">Register</button>
-          <br /><br />
-          <p>Already have Account? <Link to="/login">Login</Link></p>
+          <br />
+          <br />
+          <p>
+            Already have Account? <Link to="/login">Login</Link>
+          </p>
         </form>
       </div>
     </>
