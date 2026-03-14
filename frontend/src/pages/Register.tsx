@@ -24,6 +24,13 @@ const Register = ()=>{
     }
     return(
         <>
+        <div>
+            <form onSubmit={handelRegister}>
+                <input type="text" placeholder="Enter Your Name.." value={name} onChange={(e)=>setName(e.target.value)} />
+                <input type="email" placeholder="Enter Your Email.." value={email} onChange={(e)=>setEmail(e.target.value)} />
+                <input type="password" placeholder="Enter Your Password.." value={password} onChange={(e)=>setPassword(e.target.value)}/>    
+            </form>
+        </div>
         </>
     )
 }
