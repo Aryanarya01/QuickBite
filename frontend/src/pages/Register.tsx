@@ -16,7 +16,10 @@ const Register = ()=>{
          });
          const data = await res.json();
          if(res.ok){
-            
+            alert("Registered Successfully! Please Login....");
+            navigate("/login");
+         }else{
+            alert(data.message);
          }
     }
     return(
