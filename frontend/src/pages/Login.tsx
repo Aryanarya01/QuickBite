@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { apiFetch } from "../api/api";
 import { useAuth } from "../context/AuthContext";
 
@@ -29,8 +29,12 @@ const Login = ()=>{
         <div>
             <form onSubmit={handleLogin}>
                 <input type="text" placeholder="Enter Email.." value={email} onChange={(e)=>setEmail(e.target.value)} />
-                <input type="text" placeholder="Enter Password.." value={password} onChange={(e)=>setPassword(e.target.value)} />
-                 
+                <br /><br />      
+                <input type="text" placeholder="Enter Password.." value={password} onChange={(e)=>setPassword(e.target.value)} /> 
+                <br /><br />      
+                 <button type="submit">Login</button>
+                 <br /><br />
+                 <p>Don't have an account? <Link to="/register">Register</Link></p>
             </form>
         </div>
         </>
