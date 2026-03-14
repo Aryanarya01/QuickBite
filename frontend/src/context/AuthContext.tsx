@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, type ReactNode } from "react"
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react"
 import type { User } from "../types/User"
 import type { AuthContextType } from "../types/AuthContexTypes";
 import { apiFetch } from "../api/api";
@@ -44,4 +44,13 @@ export const Authprovider = ({children}:{children : ReactNode})=>{
     )
 }
 
-//
+//              custom hook
+export const useAuth = ()=>{
+    const context = useContext(AuthContext);
+
+    if(!context){
+        throw new Error("useAuth must be used inside AuthProvider!");
+    }
+
+    return context;
+}
