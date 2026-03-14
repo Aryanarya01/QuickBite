@@ -10,7 +10,7 @@ import type { AuthContextType } from "../types/AuthContexTypes";
 import { apiFetch } from "../api/api";
 
 export const AuthContext = createContext<AuthContextType | null>(null);
-export const Authprovider = ({ children }: { children: ReactNode }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
