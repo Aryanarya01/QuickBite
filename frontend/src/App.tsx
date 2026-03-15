@@ -30,9 +30,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/orders" element={<ProtectedRoute>
-          <MyOrder/>
-        </ProtectedRoute>} />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <MyOrder />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
