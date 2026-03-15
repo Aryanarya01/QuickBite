@@ -17,6 +17,7 @@ const MyOrder = () => {
       <div>
         {orders.map((order) => (
           <div key={order._id}>
+            <p>Address :{order.address}</p>
             <p>Total : {order.totalPrice}</p>
             <p>Status : {order.status}</p>
           </div>
