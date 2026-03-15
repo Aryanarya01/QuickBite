@@ -2,7 +2,7 @@
 const Cart = ()=>{
     return(
         <>
-        <h1></h1>
+        <h1>My Cart</h1>
         </>
     )
 }
