@@ -1,28 +1,27 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { apiFetch } from "../api/api";
 import type { Order } from "../types/Order";
 
-
-const MyOrder = ()=>{
-    const [orders,setOrders] = useState<Order[]>([]);
-        useEffect(()=>{
-            const fetchOrders = async ()=>{
-                const data = await apiFetch("/orders/my");
-                 setOrders(data);
-            }
-            fetchOrders();
-        },[])
-    return(
-        <>
-        <div>
-            {orders.map((order:any)=>(
-                <div key={order._id}>
-                    <p>Total : {order.totalPrice}</p>
-                    <p>Status : {order.status}</p>
-                </div>
-            ))}
-        </div>
-        </>
-    )
-}
-export default MyOrder
+const MyOrder = () => {
+  const [orders, setOrders] = useState<Order[]>([]);
+  useEffect(() => {
+    const fetchOrders = async () => {
+      const data = await apiFetch("/orders/my");
+      setOrders(data);
+    };
+    fetchOrders();
+  }, []);
+  return (
+    <>
+      <div>
+        {orders.map((order: any) => (
+          <div key={order._id}>
+            <p>Total : {order.totalPrice}</p>
+            <p>Status : {order.status}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+export default MyOrder;
