@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CardContext";
 
 const Cart = () => {
@@ -13,6 +14,7 @@ const Cart = () => {
           {item.quantity}
           <button onClick={() => increaseQty(item.food._id)}>+</button>
           <button onClick={() => removeFromCart(item.food._id)}>Remove</button>
+          <Link to="/checkout"><button>Checkout</button></Link>
         </div>
       ))}
       <h2>Total : {totalPrice}</h2>
