@@ -6,10 +6,12 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import MyOrder from "./pages/Myorders";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <>
+    <Navbar/>
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
