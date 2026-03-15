@@ -18,6 +18,8 @@ export const CartProvider = ({children}:{children:ReactNode})=>{
 
     const [cart,setCart] = useState<CartItem[]>([]);
 
+
+    //                                  AddToCart
     const addToCart = (food : Food)=>{
         setCart((prev)=>{
             const existing = prev.find((item)=>item.food._id === food._id);
@@ -27,8 +29,10 @@ export const CartProvider = ({children}:{children:ReactNode})=>{
             return [...prev,{food,quantity : 1}];
         })
     }
-
-
+//                                              removefromCart
+      const removeFromCart = (id:string)=>{
+        setCart((prev)=>prev.filter((item)=>item.food._id !== id));
+      }
 
     return(
 
