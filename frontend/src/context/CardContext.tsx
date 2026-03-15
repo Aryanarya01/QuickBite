@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState, type ReactNode } from "react";
 import type { CartItem } from "../types/Cart";
 import type { Food } from "../types/Food";
 
@@ -13,3 +13,24 @@ interface CartContextType{
 }
 
 const CartContext = createContext<CartContextType|null>(null);
+
+export const CartProvider = ({children}:{children:ReactNode})=>{
+
+    const [cart,setCart] = useState<CartItem[]>([]);
+
+    const addToCart = (food : Food)=>{
+        setCart((prev)=>{
+            const existing = prev.find((item)=>item.food._id === food._id);
+            if(existing){
+                return prev.map((item)=>item.food._id === food._id ?{...item,quantity :item.quantity+1} : item)
+            }
+            return [...prev,{food,quantity : 1}];
+        })
+    }
+
+
+
+    return(
+
+    )
+}
