@@ -7,6 +7,7 @@ const MyOrder = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       const data = await apiFetch("/orders/my");
+      console.log(data);
       setOrders(data);
     };
     fetchOrders();
@@ -14,7 +15,7 @@ const MyOrder = () => {
   return (
     <>
       <div>
-        {orders.map((order: any) => (
+        {orders.map((order) => (
           <div key={order._id}>
             <p>Total : {order.totalPrice}</p>
             <p>Status : {order.status}</p>
