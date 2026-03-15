@@ -23,7 +23,7 @@ const Home = () => {
           <div key={food._id}>
             <h3>{food.name}</h3>
             <p>{food.price}</p>
-            <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={()=>addToCart(food)}>Add to Cart</button>
           </div>
         ))}
       </div>
