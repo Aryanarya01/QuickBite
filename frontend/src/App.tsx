@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import MyOrder from "./pages/Myorders";
 import Navbar from "./Components/Navbar";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/cart" element={<ProtectedRoute>
+          <Cart/>
+        </ProtectedRoute>} />
       </Routes>
     </>
   );
