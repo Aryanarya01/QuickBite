@@ -1,8 +1,16 @@
+import { useCart } from "../context/CardContext";
 
 const Cart = ()=>{
+    const {cart,increaseQty,decreaseQty,totalPrice,removeFromCart} = useCart();
     return(
         <>
-        <h1>My Cart</h1>
+            {cart.map((item)=>(
+                <div key={item.food._id}>
+                    <h3>{item.food.name}</h3>
+                    <p>{item.food.price}</p>
+
+                </div>
+            ))}
         </>
     )
 }
