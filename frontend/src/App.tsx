@@ -39,9 +39,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/cart" element={<ProtectedRoute>
-          <Cart/>
-        </ProtectedRoute>} />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
