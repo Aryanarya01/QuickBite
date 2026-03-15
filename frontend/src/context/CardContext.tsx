@@ -1,4 +1,4 @@
-import { createContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import type { CartItem } from "../types/Cart";
 import type { Food } from "../types/Food";
 
@@ -79,7 +79,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const useCart = () => {
-  const context = createContext(CartContext);
+  const context = useContext(CartContext);
 
   if (!context) {
     throw new Error("useCart must be inside CartProvider");
