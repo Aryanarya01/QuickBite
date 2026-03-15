@@ -6,24 +6,17 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import MyOrder from "./pages/Myorders";
- 
+
 import Cart from "./pages/Cart";
-<<<<<<< HEAD
- 
+
 import Navbar from "./Components/Navbar";
- 
- 
- 
- 
- 
-=======
+
 import Checkout from "./pages/Checkout";
->>>>>>> frontend/Logic
 
 function App() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -52,7 +45,7 @@ function App() {
             </ProtectedRoute>
           }
         />
- 
+
         <Route
           path="/cart"
           element={
@@ -61,17 +54,24 @@ function App() {
             </ProtectedRoute>
           }
         />
- 
-        <Route path="/cart" element={<ProtectedRoute>
-          <Cart/>
-        </ProtectedRoute>} />
-<<<<<<< HEAD
- 
-=======
-        <Route  path="/checkout" element={<ProtectedRoute>
-          <Checkout/>
-        </ProtectedRoute>}  />
->>>>>>> frontend/Logic
+
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
