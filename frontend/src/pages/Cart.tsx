@@ -11,7 +11,7 @@ const Cart = ()=>{
                     <button onClick={()=>increaseQty(item.food._id)}>+</button>
                     {item.quantity}
                     <button onClick={()=>decreaseQty(item.food._id)}>-</button>
-                    
+                    <button onClick={()=>removeFromCart(item.food._id)}>Remove</button>
                 </div>
             ))}
             <h2>Total : {totalPrice}</h2>
