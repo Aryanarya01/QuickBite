@@ -48,8 +48,14 @@ export const CartProvider = ({children}:{children:ReactNode})=>{
       const totalPrice = cart.reduce((acc,item)=>acc+item.food.price * item.quantity,0);
 
     return(
-        <CartContext.Provider>
-            
+        <CartContext.Provider value={{cart,addToCart,removeFromCart,increaseQty,decreaseQty,totalPrice}}>
+            {children}
         </CartContext.Provider>
     )
+}
+
+export const useCart = ()=>{
+    const context = createContext(CartContext);
+
+    if(!)
 }
