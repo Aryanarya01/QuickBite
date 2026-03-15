@@ -34,6 +34,8 @@ export const CartProvider = ({children}:{children:ReactNode})=>{
         setCart((prev)=>prev.filter((item)=>item.food._id !== id));
       }
 
+
+//                                  increaseQty
     return(
 
     )
