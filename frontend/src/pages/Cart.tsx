@@ -8,9 +8,13 @@ const Cart = ()=>{
                 <div key={item.food._id}>
                     <h3>{item.food.name}</h3>
                     <p>{item.food.price}</p>
-
+                    <button onClick={()=>increaseQty(item.food._id)}>+</button>
+                    {item.quantity}
+                    <button onClick={()=>decreaseQty(item.food._id)}>-</button>
+                    
                 </div>
             ))}
+            <h2>Total : {totalPrice}</h2>
         </>
     )
 }
