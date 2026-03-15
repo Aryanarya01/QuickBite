@@ -11,6 +11,10 @@ import Cart from "./pages/Cart";
  
 import Navbar from "./Components/Navbar";
  
+ 
+ 
+ 
+ 
 
 function App() {
   return (
@@ -44,6 +48,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+ 
         <Route
           path="/cart"
           element={
@@ -52,6 +57,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+ 
+        <Route path="/cart" element={<ProtectedRoute>
+          <Cart/>
+        </ProtectedRoute>} />
+ 
       </Routes>
     </>
   );
