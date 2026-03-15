@@ -31,7 +31,8 @@ const Checkout = ()=>{
         <div>
             <h1>Checkout</h1>
             <input type="text" placeholder="Enter address" value={address} onChange={(e)=>setAddress(e.target.value)} />
-            <h2></h2>
+            <h2>Total : {totalPrice}</h2>
+            <button onClick={handelOrder}>Place Order</button>
         </div>
         
         </>
