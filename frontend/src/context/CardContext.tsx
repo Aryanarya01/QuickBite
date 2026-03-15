@@ -39,6 +39,13 @@ export const CartProvider = ({children}:{children:ReactNode})=>{
       const increaseQty = (id:string)=>{
         setCart((prev)=>prev.map((item)=>item.food._id===id ? {...item,quantity : item.quantity+1} : item))
       }
+
+      //                                decreaseQty
+      const decreaseQty = (id:string)=>{
+        setCart((prev)=>prev.map((item)=>item.food._id===id ? {...item,quantity : item.quantity -1} : item).filter((item)=>item.quantity > 0)) 
+      }
+
+
     return(
 
     )
