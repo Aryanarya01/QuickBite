@@ -12,4 +12,4 @@ interface CartContextType{
 
 }
 
-const CartContext = createContext<()
+const CartContext = createContext<CartContextType|null>(null);
