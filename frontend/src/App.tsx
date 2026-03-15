@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
+import MyOrder from "./pages/Myorders";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/orders" element={<ProtectedRoute>
+          <MyOrder/>
+        </ProtectedRoute>} />
       </Routes>
     </>
   );
