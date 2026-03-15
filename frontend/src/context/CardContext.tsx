@@ -45,7 +45,7 @@ export const CartProvider = ({children}:{children:ReactNode})=>{
         setCart((prev)=>prev.map((item)=>item.food._id===id ? {...item,quantity : item.quantity -1} : item).filter((item)=>item.quantity > 0)) 
       }
 
-
+      const totalPrice = cart.reduce((acc,item)=>acc+item.food.price * item.quantity,0)
     return(
 
     )
