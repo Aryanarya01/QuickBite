@@ -22,7 +22,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(()=>{
     localStorage.setItem("cart",JSON.stringify(cart));
-  },[])
+  },[cart])
 
   //                                  AddToCart
   const addToCart = (food: Food) => {
