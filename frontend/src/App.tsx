@@ -50,17 +50,6 @@ function App() {
             </ProtectedRoute>
           }
         />
- 
- 
-        <Route
-          path="/cart"
-          element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          }
-        />
- 
 
         <Route
           path="/cart"
@@ -71,7 +60,15 @@ function App() {
           }
         />
 
- 
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="/checkout"
           element={
@@ -80,7 +77,7 @@ function App() {
             </ProtectedRoute>
           }
         />
- 
+
         <Route
           path="/admin"
           element={
@@ -89,8 +86,7 @@ function App() {
             </AdminRoute>
           }
         />
- 
-      </Routes>
+      
       <Route
         path="/admin/add-food"
         element={
@@ -115,6 +111,7 @@ function App() {
           </AdminRoute>
         }
       />
+       </Routes>
     </>
   );
 }
