@@ -11,12 +11,23 @@ const Orders = ()=>{
         fetchOrders();
     },[])
 
-    const updateOrder =async ()=>{
-
+    const updateStatus =async (id : string,status : string)=>{
+        await apiFetch(`/orders/${id}`,{
+            method : "PUT",
+            body:JSON.stringify({status}),
+        })
+        fetchOrders();
     }
+
     return(
         <>
-        
+            <div>
+                <h1>All Orders...</h1>
+                {orders.map((order:any)=>(
+                    <p>Total : {order.totalPrice}</p>
+                    <p>Status : {order.status}</p>
+                ))}
+            </div>
         </>
     )
 }
