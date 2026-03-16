@@ -17,7 +17,7 @@ const Orders = ()=>{
             body:JSON.stringify({status}),
         })
         fetchOrders();
-    }Out for delivery
+    } 
 
     return(
         <>
