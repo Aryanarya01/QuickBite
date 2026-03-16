@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { apiFetch } from "../../api/api";
 
 
@@ -8,7 +8,13 @@ const ManageFood = ()=>{
         const data = await apiFetch("/foods");
         setFoods(data);
     }
-    
+
+    useEffect(()=>{
+        fetchFood();
+    },[])
+    const deleteFood = async(id : string)=>{
+
+    }
     return(
 
         <>
