@@ -20,6 +20,7 @@ const Checkout = () => {
         body: JSON.stringify({ items, address }),
       });
       alert("Order placed Successfully!");
+      localStorage.removeItem("cart")
       navigate("/orders");
     } catch (err: any) {
       alert(err.message);
