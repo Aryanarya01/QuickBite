@@ -13,7 +13,7 @@ import Checkout from "./pages/Checkout";
 function App() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -42,12 +42,22 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/cart" element={<ProtectedRoute>
-          <Cart/>
-        </ProtectedRoute>} />
-        <Route  path="/checkout" element={<ProtectedRoute>
-          <Checkout/>
-        </ProtectedRoute>}  />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
