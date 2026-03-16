@@ -16,11 +16,20 @@ const ManageFood = ()=>{
         await apiFetch(`/foods/${id}`,{
             method:"DELETE"
         })
+        fetchFood();
     }
     return(
 
         <>
-        
+            <div>
+                <h1>Manage Food</h1>
+                {foods.map((food:any)=>(
+                    <div key={food._id}>
+                        <h3>{food.name}</h3>
+                        <button onClick={()=>deleteFood(food._id)}>Delete</button>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
