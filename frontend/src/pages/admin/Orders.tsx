@@ -10,6 +10,10 @@ const Orders = ()=>{
     useEffect(()=>{
         fetchOrders();
     },[])
+
+    const updateOrder =async ()=>{
+
+    }
     return(
         <>
         
