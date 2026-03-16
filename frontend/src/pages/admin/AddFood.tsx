@@ -27,6 +27,14 @@ const AddFood = ()=>{
     }
     return(
         <>
+        <div>
+            <h1>Add Food</h1>
+            <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} />
+            <input type="number" placeholder="Price" value={price} onChange={(e)=>setPrice(e.target.value)} />
+            <input type="text" placeholder="description" value={description} onChange={(e)=>setDescription(e.target.value)} />
+            <input type="text" placeholder="category" value={category} onChange={(e)=>setCategory(e.target.value)} />
+            <button onClick={handelAdd}>Add Food</button>
+        </div>
         
         </>
     )
