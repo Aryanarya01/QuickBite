@@ -9,6 +9,9 @@ import MyOrder from "./pages/Myorders";
 import Navbar from "./Components/Navbar";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import AdminRoute from "./Components/AdminRoute";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AddFood from "./pages/admin/AddFood";
 
 function App() {
   return (
@@ -58,7 +61,19 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/admin" element={<AdminRoute>
+          <AdminDashboard/>
+        </AdminRoute>} />
       </Routes>
+      <Route path="/admin/add-food" element={<AdminRoute>
+        <AddFood/>
+      </AdminRoute>}/>
+      <Route path="/admin/manage-foods" element={<AdminRoute>
+        
+      </AdminRoute>}/>
+      <Route path="/admin/orders" element={<AdminRoute>
+
+      </AdminRoute>}/>
     </>
   );
 }
