@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { apiFetch } from "../../api/api";
 
 
 const AddFood = ()=>{
@@ -9,7 +10,19 @@ const AddFood = ()=>{
 
     const handelAdd =async ()=>{
         try{
-            
+            await apiFetch("/foods",{
+                method : "POST",
+                body:JSON.stringify({
+                    name,price,description,category
+                })
+            });
+            alert("Food added!");
+            setName("");
+            setPrice("");
+            setDescription("");
+            setCategory("");
+        }catch(err:any){
+            alert(err.message)
         }
     }
     return(
