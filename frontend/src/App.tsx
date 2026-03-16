@@ -13,6 +13,7 @@ import AdminRoute from "./Components/AdminRoute";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AddFood from "./pages/admin/AddFood";
 import ManageFood from "./pages/admin/ManageFood";
+import Orders from "./pages/admin/Orders";
 
 function App() {
   return (
@@ -73,7 +74,7 @@ function App() {
         <ManageFood/>
       </AdminRoute>}/>
       <Route path="/admin/orders" element={<AdminRoute>
-
+        <Orders/>
       </AdminRoute>}/>
     </>
   );
