@@ -13,7 +13,9 @@ const ManageFood = ()=>{
         fetchFood();
     },[])
     const deleteFood = async(id : string)=>{
-
+        await apiFetch(`/foods/${id}`,{
+            method:"DELETE"
+        })
     }
     return(
 
