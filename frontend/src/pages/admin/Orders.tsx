@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { apiFetch } from "../../api/api";
 
 const Orders = ()=>{
@@ -7,6 +7,9 @@ const Orders = ()=>{
         const data = await apiFetch("/orders");
         setOrders(data);
     }
+    useEffect(()=>{
+        fetchOrders();
+    },[])
     return(
         <>
         
