@@ -12,6 +12,7 @@ import Checkout from "./pages/Checkout";
 import AdminRoute from "./Components/AdminRoute";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AddFood from "./pages/admin/AddFood";
+import ManageFood from "./pages/admin/ManageFood";
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
         <AddFood/>
       </AdminRoute>}/>
       <Route path="/admin/manage-foods" element={<AdminRoute>
-        
+        <ManageFood/>
       </AdminRoute>}/>
       <Route path="/admin/orders" element={<AdminRoute>
 
