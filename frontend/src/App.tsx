@@ -12,6 +12,11 @@ import Cart from "./pages/Cart";
 import Navbar from "./Components/Navbar";
 
 import Checkout from "./pages/Checkout";
+import AdminRoute from "./Components/AdminRoute";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AddFood from "./pages/admin/AddFood";
+import ManageFood from "./pages/admin/ManageFood";
+import Orders from "./pages/admin/Orders";
 
 function App() {
   return (
@@ -45,6 +50,17 @@ function App() {
             </ProtectedRoute>
           }
         />
+ 
+ 
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          }
+        />
+ 
 
         <Route
           path="/cart"
@@ -55,15 +71,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/cart"
-          element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          }
-        />
-
+ 
         <Route
           path="/checkout"
           element={
@@ -72,7 +80,41 @@ function App() {
             </ProtectedRoute>
           }
         />
+ 
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
+ 
       </Routes>
+      <Route
+        path="/admin/add-food"
+        element={
+          <AdminRoute>
+            <AddFood />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/manage-foods"
+        element={
+          <AdminRoute>
+            <ManageFood />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/orders"
+        element={
+          <AdminRoute>
+            <Orders />
+          </AdminRoute>
+        }
+      />
     </>
   );
 }
