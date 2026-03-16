@@ -86,32 +86,32 @@ function App() {
             </AdminRoute>
           }
         />
-      
-      <Route
-        path="/admin/add-food"
-        element={
-          <AdminRoute>
-            <AddFood />
-          </AdminRoute>
-        }
-      />
-      <Route
-        path="/admin/manage-foods"
-        element={
-          <AdminRoute>
-            <ManageFood />
-          </AdminRoute>
-        }
-      />
-      <Route
-        path="/admin/orders"
-        element={
-          <AdminRoute>
-            <Orders />
-          </AdminRoute>
-        }
-      />
-       </Routes>
+
+        <Route
+          path="/admin/add-food"
+          element={
+            <AdminRoute>
+              <AddFood />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/manage-foods"
+          element={
+            <AdminRoute>
+              <ManageFood />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/orders"
+          element={
+            <AdminRoute>
+              <Orders />
+            </AdminRoute>
+          }
+        />
+      </Routes>
     </>
   );
 }
