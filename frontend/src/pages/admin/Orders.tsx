@@ -17,15 +17,21 @@ const Orders = ()=>{
             body:JSON.stringify({status}),
         })
         fetchOrders();
-    }
+    }Out for delivery
 
     return(
         <>
             <div>
                 <h1>All Orders...</h1>
                 {orders.map((order:any)=>(
-                    <p>Total : {order.totalPrice}</p>
+                   <div key={order._id}>
+                      <p>Total : {order.totalPrice}</p>
                     <p>Status : {order.status}</p>
+                    <button onClick={()=>updateStatus(order._id,"preparing")}>Preparing</button>
+                    <button onClick={()=>updateStatus(order._id,"delivedred")}>Delivered</button>
+                    <button onClick={()=>updateStatus(order._id,"Out for delivery")}>Out for delivery</button>
+                   </div>
+
                 ))}
             </div>
         </>
