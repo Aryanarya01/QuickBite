@@ -6,7 +6,13 @@ const ManageFood = () => {
   const [editingFood,setEditingFood] = useState<any>(null);
   const [name,setName] = useState("");
   const [price,setPrice] = useState("");
-  const [description,setDescription] = useState("")
+  const [description,setDescription] = useState("");
+  const [image,setImage] = useState<File|null>(null);
+
+
+    const handelEdit = ()=>{
+      
+    }
   const fetchFood = async () => {
     const data = await apiFetch("/foods");
     setFoods(data);
