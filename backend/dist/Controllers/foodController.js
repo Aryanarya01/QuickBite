@@ -69,6 +69,12 @@ export const updateFood = async (req, res) => {
             name,
             price, description, category
         };
+        if (req.file) {
+            updateDate.image = req.file.path;
+        }
+        const food = await Food.findByIdAndUpdate(id, updateDate, {
+            new: true
+        });
     }
     catch (err) {
         res.status(500).json({ message: "Update Failed!" });
