@@ -5,7 +5,7 @@ import cloudinary from "../config/Cloudinary.js";
 const storage = new CloudinaryStorage({
   cloudinary,
   params: async (req, file) => ({
-    folder: "foods",
+    folder: "QuickBite_Food",
     allowed_formats: ["jpg", "png", "jpeg"],
   }),
 });
