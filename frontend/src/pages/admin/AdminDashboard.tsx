@@ -5,7 +5,7 @@ const AdminDashboard = () => {
     <div>
       <h1>Admin Dashboard</h1>
 
-      <Link to="/admin/food-add">
+      <Link to="/admin/add-food">
         <button>Add Food</button>
       </Link>
       <Link to="/admin/manage-foods">

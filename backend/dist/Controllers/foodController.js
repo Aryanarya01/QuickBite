@@ -2,7 +2,8 @@ import { Food } from "../models/foodModel.js";
 //                                      Create Food(admin)
 export const createFood = async (req, res) => {
     try {
-        const { name, price, description, image, category } = req.body;
+        const { name, price, description, category } = req.body;
+        const image = req.file?.path; //Cloudinary url
         if (!name || !price || !description || !image || !category) {
             res.status(400).json({ message: "All fields are required" });
             return;

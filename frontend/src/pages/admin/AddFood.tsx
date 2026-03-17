@@ -1,28 +1,36 @@
 import { useState } from "react";
-import { apiFetch } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 const AddFood = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const [image, setImage] = useState<File | null>(null);
 
   const handelAdd = async () => {
     try {
-      await apiFetch("/foods", {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("price", price);
+      formData.append("description", description);
+      formData.append("category", category);
+      if (image) {
+        formData.append("image", image);
+      }
+      const res = await fetch("http://localhost:5000/api/foods", {
         method: "POST",
-        body: JSON.stringify({
-          name,
-          price,
-          description,
-          category,
-        }),
+        credentials: "include",
+        body: formData,
       });
+      const data = await res.json();
+      if (!res.ok) {
+        alert(data.message);
+        return;
+      }
       alert("Food added!");
-      setName("");
-      setPrice("");
-      setDescription("");
-      setCategory("");
+      navigate("/");
     } catch (err: any) {
       alert(err.message);
     }
@@ -36,6 +44,10 @@ const AddFood = () => {
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="file"
+          onChange={(e) => setImage(e.target.files?.[0] || null)}
         />
         <input
           type="number"
