@@ -31,7 +31,6 @@ const AddFood = () => {
     }catch(err:any){
       alert(err.message)
     }
-
   };
   return (
     <>
