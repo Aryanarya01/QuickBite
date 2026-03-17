@@ -7,34 +7,33 @@ const AddFood = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [image,setImage] = useState<File|null>(null)
+  const [image, setImage] = useState<File | null>(null);
 
   const handelAdd = async () => {
-    try{
-         const formData = new FormData();
-    formData.append("name",name);
-    formData.append("price",price);
-    formData.append("description",description);
-    formData.append("category",category);
-    if(image){
-      formData.append("image",image)
+    try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("price", price);
+      formData.append("description", description);
+      formData.append("category", category);
+      if (image) {
+        formData.append("image", image);
+      }
+      const res = await fetch("http://localhost:5000/api/foods", {
+        method: "POST",
+        credentials: "include",
+        body: formData,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        alert(data.message);
+        return;
+      }
+      alert("Food added!");
+      navigate("/");
+    } catch (err: any) {
+      alert(err.message);
     }
-    const res = await fetch("http://localhost:5000/api/foods",{
-      method:"POST",
-      credentials : "include",
-      body:formData,
-    });
-    const data = await res.json();
-    if(!res.ok){
-      alert(data.message);
-      return;
-    }
-    alert("Food added!");
-    navigate("/")
-    }catch(err:any){
-      alert(err.message)
-    }
-
   };
   return (
     <>
@@ -46,7 +45,10 @@ const AddFood = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <input type="file" onChange={(e)=>setImage(e.target.files?.[0]||null)} />
+        <input
+          type="file"
+          onChange={(e) => setImage(e.target.files?.[0] || null)}
+        />
         <input
           type="number"
           placeholder="Price"
