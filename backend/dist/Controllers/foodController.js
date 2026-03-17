@@ -64,7 +64,11 @@ export const deleteFood = async (req, res) => {
 export const updateFood = async (req, res) => {
     try {
         const { id } = req.params;
-        const {};
+        const { name, price, description, category } = req.body;
+        let updateDate = {
+            name,
+            price, description, category
+        };
     }
     catch (err) {
         res.status(500).json({ message: "Update Failed!" });
