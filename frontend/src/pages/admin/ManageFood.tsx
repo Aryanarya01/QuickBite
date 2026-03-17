@@ -3,6 +3,10 @@ import { apiFetch } from "../../api/api";
 
 const ManageFood = () => {
   const [foods, setFoods] = useState([]);
+  const [editingFood,setEditingFood] = useState<any>(null);
+  const [name,setName] = useState("");
+  const [price,setPrice] = useState("");
+  const [description,setDescription] = useState("")
   const fetchFood = async () => {
     const data = await apiFetch("/foods");
     setFoods(data);
