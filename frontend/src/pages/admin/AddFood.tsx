@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddFood = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -27,9 +29,12 @@ const AddFood = () => {
       alert(data.message);
       return;
     }
+    alert("Food added!");
+    navigate("/")
     }catch(err:any){
       alert(err.message)
     }
+
   };
   return (
     <>
