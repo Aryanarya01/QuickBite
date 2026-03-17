@@ -21,6 +21,7 @@ const Home = () => {
         <h1>Foods</h1>
         {foods.map((food) => (
           <div key={food._id}>
+            <img src={food.image} width="150" />
             <h3>{food.name}</h3>
             <p>{food.price}</p>
             <button onClick={()=>addToCart(food)}>Add to Cart</button>
