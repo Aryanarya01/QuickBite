@@ -9,24 +9,15 @@ const AddFood = () => {
   const [image,setImage] = useState<File|null>(null)
 
   const handelAdd = async () => {
-    try {
-      await apiFetch("/foods", {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          price,
-          description,
-          category,
-        }),
-      });
-      alert("Food added!");
-      setName("");
-      setPrice("");
-      setDescription("");
-      setCategory("");
-    } catch (err: any) {
-      alert(err.message);
+      const formData = new FormData();
+    formData.append("name",name);
+    formData.append("price",price);
+    formData.append("description",description);
+    formData.append("category",category);
+    if(image){
+      formData.append("image",image)
     }
+    
   };
   return (
     <>
