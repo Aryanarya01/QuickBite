@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { apiFetch } from "../../api/api";
 
 const AddFood = () => {
   const [name, setName] = useState("");
