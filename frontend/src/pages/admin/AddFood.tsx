@@ -38,6 +38,7 @@ const AddFood = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <input type="file" onChange={(e)=>setImage(e.target.files?.[0]||null)} />
         <input
           type="number"
           placeholder="Price"
