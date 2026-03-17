@@ -83,6 +83,11 @@ export const updateFood = async(req:Request,res:Response)=>{
         const food = await Food.findByIdAndUpdate(id,updateDate,{
             new : true
         })
+        if(!food){
+            res.status(404).json({message : "Food not found!"});
+            return;
+        }
+        res.json(food);
     }catch(err){
         res.status(500).json({message : "Update Failed!"});
     }
