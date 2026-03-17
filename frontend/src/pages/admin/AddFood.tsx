@@ -17,7 +17,12 @@ const AddFood = () => {
     if(image){
       formData.append("image",image)
     }
-    const res = await apiFetch
+    const res = await fetch("http://localhost:5000/api/foods",{
+      method:"POST",
+      credentials : "include",
+      body:formData,
+    });
+    
   };
   return (
     <>
