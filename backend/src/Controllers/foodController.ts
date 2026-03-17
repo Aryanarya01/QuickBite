@@ -67,3 +67,12 @@ export const deleteFood = async(req:Request,res:Response)=>{
         res.status(500).json({message : "Error deleteing food!"});
     }
 }
+
+export const updateFood = async(req:Request,res:Response)=>{
+    try{
+        const {id} = req.params;
+        const {}
+    }catch(err){
+        res.status(500).json({message : "Update Failed!"});
+    }
+}

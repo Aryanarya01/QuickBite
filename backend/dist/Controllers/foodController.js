@@ -61,4 +61,13 @@ export const deleteFood = async (req, res) => {
         res.status(500).json({ message: "Error deleteing food!" });
     }
 };
+export const updateFood = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const {};
+    }
+    catch (err) {
+        res.status(500).json({ message: "Update Failed!" });
+    }
+};
 //# sourceMappingURL=foodController.js.map
