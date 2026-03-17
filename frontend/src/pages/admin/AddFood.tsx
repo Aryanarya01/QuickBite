@@ -28,8 +28,8 @@ const AddFood = () => {
       alert(data.message);
       return;
     }
-    }catch(err){
-
+    }catch(err:any){
+      alert(err.message)
     }
 
   };
