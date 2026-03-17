@@ -9,7 +9,8 @@ const AddFood = () => {
   const [image,setImage] = useState<File|null>(null)
 
   const handelAdd = async () => {
-      const formData = new FormData();
+    try{
+         const formData = new FormData();
     formData.append("name",name);
     formData.append("price",price);
     formData.append("description",description);
@@ -22,7 +23,15 @@ const AddFood = () => {
       credentials : "include",
       body:formData,
     });
-    
+    const data = await res.json();
+    if(!res.ok){
+      alert(data.message);
+      return;
+    }
+    }catch(err){
+
+    }
+
   };
   return (
     <>
