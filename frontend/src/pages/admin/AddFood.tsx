@@ -6,6 +6,7 @@ const AddFood = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const [image,setImage] = useState<File|null>(null)
 
   const handelAdd = async () => {
     try {
