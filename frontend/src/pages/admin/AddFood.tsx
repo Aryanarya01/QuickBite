@@ -17,7 +17,7 @@ const AddFood = () => {
     if(image){
       formData.append("image",image)
     }
-    
+    const res = await apiFetch
   };
   return (
     <>
