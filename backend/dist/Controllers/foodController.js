@@ -15,9 +15,7 @@ export const createFood = async (req, res) => {
             image,
             category,
         });
-        res.status(201).json({ message: "Successfully Created!",
-            food
-        });
+        res.status(201).json({ message: "Successfully Created!", food });
     }
     catch (err) {
         res.status(500).json({ message: "Error Creating Food!" });
@@ -67,13 +65,15 @@ export const updateFood = async (req, res) => {
         const { name, price, description, category } = req.body;
         let updateDate = {
             name,
-            price, description, category
+            price,
+            description,
+            category,
         };
         if (req.file) {
             updateDate.image = req.file.path;
         }
         const food = await Food.findByIdAndUpdate(id, updateDate, {
-            new: true
+            new: true,
         });
         if (!food) {
             res.status(404).json({ message: "Food not found!" });
