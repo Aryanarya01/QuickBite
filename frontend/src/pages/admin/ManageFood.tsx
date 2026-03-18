@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { apiFetch } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 const ManageFood = () => {
+  const navigate = useNavigate();
   const [foods, setFoods] = useState([]);
   // const [editingFood,setEditingFood] = useState<any>(null);
   // const [name,setName] = useState("");
@@ -40,6 +42,7 @@ const ManageFood = () => {
           <div key={food._id}>
             <h3>{food.name}</h3>
             <button onClick={() => deleteFood(food._id)}>Delete</button>
+            <button onClick={()=> navigate(`/admin/edit-food/${food._id}`)} >Edit</button>
           </div>
         ))}
       </div>
