@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { apiFetch } from "../../api/api";
 
 const EditFood = ()=>{
+    const navigate = useNavigate();
     const {id} = useParams();
     const [name,setName] = useState("");
   const [price,setPrice] = useState("");
@@ -22,16 +23,14 @@ const EditFood = ()=>{
   },[id]);
 
   const handelUpdate = async()=>{
-    const res = await apiFetch(`/foods/${id}`,{
+    const data = await apiFetch(`/foods/${id}`,{
         method : "PUT",
         body :JSON.stringify({name,price,category,description}),
     });
-    const data = await res.json();
-    if(!res.ok){
-        alert(data.message);
-        return;
-    }
-    alert("Updated Succesfully!");
+    
+   
+     alert("Updated Succesfully!");
+    navigate("/")
   }
     return(
         <>
