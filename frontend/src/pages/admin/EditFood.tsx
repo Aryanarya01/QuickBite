@@ -24,7 +24,7 @@ const EditFood = ()=>{
   const handelUpdate = async()=>{
     const res = await apiFetch(`/foods/${id}`,{
         method : "PUT",
-        body :JSON.stringify({name,price,category,description});
+        body :JSON.stringify({name,price,category,description}),
     });
     const data = await res.json();
     if(!res.ok){
@@ -35,7 +35,15 @@ const EditFood = ()=>{
   }
     return(
         <>
+        <div>
+            <input value={name} onChange={(e)=>setName(e.target.value)} />
+            <input value={price} onChange={(e)=>setPrice(e.target.value)} />
+            <input value={description} onChange={(e)=>setDescription(e.target.value)} />
+            <input value={category} onChange={(e)=>setCategory(e.target.value)} />
+            <button></button>
+        </div>
         </>
+        
 
     )
 }
