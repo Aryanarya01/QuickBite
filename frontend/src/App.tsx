@@ -111,6 +111,7 @@ function App() {
             </AdminRoute>
           }
         />
+        <Route path="/admin/edit-food/:id" element={<EditFood />} />
       </Routes>
     </>
   );
