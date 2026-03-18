@@ -40,7 +40,7 @@ const EditFood = ()=>{
             <input value={price} onChange={(e)=>setPrice(e.target.value)} />
             <input value={description} onChange={(e)=>setDescription(e.target.value)} />
             <input value={category} onChange={(e)=>setCategory(e.target.value)} />
-            <button></button>
+            <button onClick={handelUpdate}>Update Food</button>
         </div>
         </>
         
