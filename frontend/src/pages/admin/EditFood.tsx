@@ -27,6 +27,11 @@ const EditFood = ()=>{
         body :JSON.stringify({name,price,category,description});
     });
     const data = await res.json();
+    if(!res.ok){
+        alert(data.message);
+        return;
+    }
+    alert("Updated Succesfully!");
   }
     return(
         <>
