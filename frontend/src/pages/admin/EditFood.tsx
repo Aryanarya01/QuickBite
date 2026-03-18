@@ -23,14 +23,16 @@ const EditFood = ()=>{
   },[id]);
 
   const handelUpdate = async()=>{
-    const data = await apiFetch(`/foods/${id}`,{
+   try{
+     const data = await apiFetch(`/foods/${id}`,{
         method : "PUT",
         body :JSON.stringify({name,price,category,description}),
     });
-    
-   
      alert("Updated Succesfully!");
     navigate("/")
+   }catch(err :any){
+    alert(err.message)
+   }
   }
     return(
         <>
