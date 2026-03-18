@@ -18,28 +18,54 @@ const Orders = () => {
     });
     fetchOrders();
   };
+ 
+
+ const getStatusColor = (status: string) => {
+    switch (status) {
+      case "Pending":
+        return "gray";
+      case "Preparing":
+        return "orange";
+      case "Out for delivery":
+        return "blue";
+      case "Delivered":
+        return "green";
+      default:
+        return "black";
+    }
+  };
 
   return (
-    <>
-      <div>
-        <h1>All Orders...</h1>
-        {orders.map((order: any) => (
-          <div key={order._id}>
-            <p>Total : {order.totalPrice}</p>
-            <p>Status : {order.status}</p>
-            <button onClick={() => updateStatus(order._id, "preparing")}>
-              Preparing
-            </button>
-            <button onClick={() => updateStatus(order._id, "delivedred")}>
-              Delivered
-            </button>
-            <button onClick={() => updateStatus(order._id, "Out for delivery")}>
+    <div>
+      <h1>All Orders...</h1>
+
+      {orders.map((order: any) => (
+        <div key={order._id} style={{ marginBottom: "10px" }}>
+          <p>Total: {order.totalPrice}</p>
+
+          {/* Status text with color */}
+          <p style={{ color: getStatusColor(order.status) }}>
+            Status: {order.status}
+          </p>
+
+          {/* ✅ Dropdown instead of buttons */}
+          <select
+            value={order.status}
+            onChange={(e) =>
+              updateStatus(order._id, e.target.value)
+            }
+          >
+            <option value="Pending">Pending</option>
+            <option value="Preparing">Preparing</option>
+            <option value="Out for delivery">
               Out for delivery
-            </button>
-          </div>
-        ))}
-      </div>
-    </>
+            </option>
+            <option value="Delivered">Delivered</option>
+          </select>
+        </div>
+      ))}
+    </div>
   );
 };
+
 export default Orders;

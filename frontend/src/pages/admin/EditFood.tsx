@@ -29,6 +29,7 @@ const EditFood = ()=>{
         body :JSON.stringify({name,price,category,description}),
     });
      alert("Updated Succesfully!");
+     
     navigate("/")
    }catch(err :any){
     alert(err.message)
