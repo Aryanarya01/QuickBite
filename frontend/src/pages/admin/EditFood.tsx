@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { apiFetch } from "../../api/api";
 
 const EditFood = ()=>{
     const {id} = useParams();
@@ -18,7 +19,15 @@ const EditFood = ()=>{
         setCategory(data.category);
      }
      fetchFood();
-  },[id])
+  },[id]);
+
+  const handelUpdate = async()=>{
+    const res = await apiFetch(`/foods/${id}`,{
+        method : "PUT",
+        body :JSON.stringify({name,price,category,description});
+    });
+    const data = await res.json();
+  }
     return(
         <>
         </>
