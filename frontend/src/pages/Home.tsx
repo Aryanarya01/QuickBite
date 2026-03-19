@@ -14,6 +14,8 @@ const Home = () => {
   "Sushi",
   "Dessert",
   "Drinks",
+  "Sweet",
+  "INDIAN"
 ];
 const [activeCategory, setActiveCategory] = useState("All");
 useEffect(() => {
@@ -69,14 +71,14 @@ useEffect(() => {
 
         {/* foodGrid */}
         <div className="grid grid-cols-4 gap-6">
-        {foods.map((food) => (
+        {filteredFoods.map((food) => (
           <div key={food._id} className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition">
             <img src={food.image} className="w-full h-40 object-cover rounded" />
             <h3 className="mt-3 font-semibold text-lg">{food.name}</h3>
              <p className="text-gray-600 text-sm">
                 ₹{food.price}
               </p>
-
+            <p className="text-gray-600 text-sm">{food.category}</p>
               <button
                 onClick={() => addToCart(food)}
                 className="mt-3 w-full bg-orange-500 text-white py-2 rounded"
