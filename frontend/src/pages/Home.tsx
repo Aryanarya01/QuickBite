@@ -89,10 +89,13 @@ const Home = () => {
           {/* foodGrid */}
           <div className="grid grid-cols-4 gap-6">
             {filteredFoods.map((food) => (
-              <div
-                key={food._id}
-                className="bg-[#1a1a1a] p-4 rounded-lg shadow-md hover:shadow-orange-500/30 transition"
-              >
+            <div
+  key={food._id}
+  className="bg-[#1a1a1a] p-4 rounded-lg shadow-md 
+  hover:shadow-orange-500/40 
+  hover:scale-105 
+  transition duration-300 ease-in-out cursor-pointer"
+>
                 <img
                   src={food.image}
                   className="w-full h-40 object-cover rounded"
