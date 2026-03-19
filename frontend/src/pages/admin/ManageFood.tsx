@@ -48,8 +48,11 @@ const ManageFood = () => {
                 </p>
                 <p className="text-gray-500 text-sm line-clamp-2">{food.description}</p>
                 <p className="text-xs text-orange-500 mt-1">{food.category}</p>
-              <button onClick={() => deleteFood(food._id)}>Delete</button>
-              <button onClick={()=> navigate(`/admin/edit-food/${food._id}`)} >Edit</button>
+              <div className="flex justify-between mt-4">
+                <button className="px-3 border border-gray-600 py-1 rounded hover:border-orange-500 hover:text-orange-500 transition" onClick={()=> navigate(`/admin/edit-food/${food._id}`)} >Edit</button>
+                <button className="px-3 py-1 bg-red-500 hover:bg-red-600 transition rounded" onClick={() => deleteFood(food._id)}>Delete</button>
+            
+              </div>
             </div>
           ))}
         </div>
