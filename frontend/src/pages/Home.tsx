@@ -110,10 +110,10 @@ const Home = () => {
             ) : (
               <div className="space-y-4" >
                 {cart.map((item)=>(
-                  <div key={item.food._id} className="flex">
+                  <div key={item.food._id} className="flex justify-between items-center">
                     <div>
-                      <p>{item.food.name}</p>
-                      <p>x{item.quantity}</p>
+                      <p className="font-medium">{item.food.name}</p>
+                      <p className="text-sm text-gray-500">x{item.quantity}</p>
                     </div>
                      <p className="text-sm">
             ₹{item.food.price * item.quantity}
@@ -123,7 +123,8 @@ const Home = () => {
               </div>
             )
            }
-           
+           {/* total */}
+           <div className="mt-6 border-t pt-4"><p className="font-semibold">Total : ₹{totalPrice} </p></div>
 
           <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded">
             View Cart
