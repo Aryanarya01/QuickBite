@@ -24,24 +24,27 @@ const Login = () => {
   //   }
   // };
   const handleLogin = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const data = await apiFetch("/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-    });
+    try {
+      const data = await apiFetch("/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+      });
 
-    setUser(data);
-    navigate("/");
-  } catch (err: any) {
-    alert(err.message);
-  }
-};
+      setUser(data);
+      navigate("/");
+    } catch (err: any) {
+      alert(err.message);
+    }
+  };
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-gray-300">
-        <form onSubmit={handleLogin} className="bg-white p-6 rounded-lg shadow w-80">
+        <form
+          onSubmit={handleLogin}
+          className="bg-white p-6 rounded-lg shadow w-80"
+        >
           <h2 className="text-xl font-bold mb-4">Login</h2>
           <input
             type="text"
@@ -61,11 +64,19 @@ const Login = () => {
           />
           <br />
           <br />
-          <button type="submit" className="w-full bg-orange-500 text-white py-2 rounded">Login</button>
+          <button
+            type="submit"
+            className="w-full bg-orange-500 text-white py-2 rounded"
+          >
+            Login
+          </button>
           <br />
           <br />
           <p className="text-sm mt-3">
-            Don't have an account? <Link className="text-blue-500" to="/register">Register</Link>
+            Don't have an account?{" "}
+            <Link className="text-blue-500" to="/register">
+              Register
+            </Link>
           </p>
         </form>
       </div>
