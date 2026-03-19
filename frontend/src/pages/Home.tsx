@@ -108,7 +108,7 @@ const Home = () => {
                 <p className="text-gray-600 text-sm">{food.category}</p>
                 <button
                   onClick={() => addToCart(food)}
-                 className="mt-3 w-full bg-orange-500 text-white py-2 rounded 
+                  className="mt-3 w-full bg-orange-500 text-white py-2 rounded 
                             hover:bg-orange-600 active:scale-95 transition"
                 >
                   Add to Cart
