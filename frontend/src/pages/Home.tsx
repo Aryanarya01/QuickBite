@@ -4,7 +4,7 @@ import { apiFetch } from "../api/api";
 import { useCart } from "../context/CartContext";
 
 const Home = () => {
-  const { addToCart } = useCart();
+  const { addToCart,cart,totalPrice } = useCart();
   const [foods, setFoods] = useState<Food[]>([]);
   const categories = [
     "All",
@@ -96,11 +96,34 @@ const Home = () => {
             ))}
           </div>
         </div>
+
+
+
+
         {/* Right Cart */}
         <div className="w-72 bg-white p-5 shadow-md">
           <h2 className="text-xl font-semibold mb-4">Your Feast 🍔</h2>
 
-          <p>Cart items here...</p>
+           {
+            cart.length === 0 ? (
+              <p className="text-gray-500">Cart is empty...</p>
+            ) : (
+              <div className="space-y-4" >
+                {cart.map((item)=>(
+                  <div key={item.food._id} className="flex">
+                    <div>
+                      <p>{item.food.name}</p>
+                      <p>x{item.quantity}</p>
+                    </div>
+                     <p className="text-sm">
+            ₹{item.food.price * item.quantity}
+          </p>
+                  </div>
+                ))}
+              </div>
+            )
+           }
+           
 
           <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded">
             View Cart
