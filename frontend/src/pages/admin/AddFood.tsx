@@ -30,7 +30,7 @@ const AddFood = () => {
         return;
       }
       alert("Food added!");
-      navigate("/");
+      navigate("/admin/manage-foods");
     } catch (err: any) {
       alert(err.message);
     }
@@ -38,7 +38,7 @@ const AddFood = () => {
   return (
     <>
       <div>
-        <h1>Add Food</h1>
+        <h1>Add Food 🍔</h1>
         <input
           type="text"
           placeholder="Name"
