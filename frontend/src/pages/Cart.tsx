@@ -8,6 +8,7 @@ const Cart = () => {
     <>
       {cart.map((item) => (
         <div key={item.food._id}>
+          <h1 className="text-green-500">Hello</h1>
           <h3>{item.food.name}</h3>
           <p>{item.food.price}</p>
           <button onClick={() => decreaseQty(item.food._id)}>-</button>
