@@ -40,13 +40,15 @@ const Login = () => {
 };
   return (
     <>
-      <div>
-        <form onSubmit={handleLogin}>
+      <div className="flex items-center justify-center min-h-screen bg-gray-300">
+        <form onSubmit={handleLogin} className="bg-white p-6 rounded-lg shadow w-80">
+          <h2 className="text-xl font-bold mb-4">Login</h2>
           <input
             type="text"
             placeholder="Enter Email.."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="w-full border p-2 mb-3 rounded"
           />
           <br />
           <br />
@@ -55,14 +57,15 @@ const Login = () => {
             placeholder="Enter Password.."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="w-full border p-2 mb-3 rounded"
           />
           <br />
           <br />
-          <button type="submit">Login</button>
+          <button type="submit" className="w-full bg-orange-500 text-white py-2 rounded">Login</button>
           <br />
           <br />
-          <p>
-            Don't have an account? <Link to="/register">Register</Link>
+          <p className="text-sm mt-3">
+            Don't have an account? <Link className="text-blue-500" to="/register">Register</Link>
           </p>
         </form>
       </div>

@@ -39,13 +39,15 @@ const Register = () => {
 };
   return (
     <>
-      <div>
-        <form onSubmit={handelRegister}>
+      <div className="flex items-center justify-center min-h-screen bg-gray-300">
+        <form className="bg-white p-6 rounded-lg shadow w-80" onSubmit={handelRegister}>
+          <h2 className="text-xl font-bold mb-4">Register</h2>
           <input
             type="text"
             placeholder="Enter Your Name.."
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="w-full border rounded p-2 mb-3"
           />
           <br />
           <br />
@@ -54,6 +56,7 @@ const Register = () => {
             placeholder="Enter Your Email.."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="w-full border rounded p-2 mb-3"
           />
           <br />
           <br />
@@ -62,14 +65,15 @@ const Register = () => {
             placeholder="Enter Your Password.."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="w-full border rounded p-2 mb-3"
           />
           <br />
           <br />
-          <button type="submit">Register</button>
+          <button className="w-full bg-orange-500 rounded py-2 text-white" type="submit">Register</button>
           <br />
           <br />
-          <p>
-            Already have Account? <Link to="/login">Login</Link>
+          <p className="text-sm mt-2">
+            Already have Account? <Link className="text-blue-500" to="/login">Login</Link>
           </p>
         </form>
       </div>
