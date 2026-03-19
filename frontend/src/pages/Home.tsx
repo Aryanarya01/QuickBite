@@ -15,15 +15,19 @@ const Home = () => {
   "Dessert",
   "Drinks",
 ];
-
 const [activeCategory, setActiveCategory] = useState("All");
-  useEffect(() => {
+useEffect(() => {
     const fetchFood = async () => {
       const data = await apiFetch("/foods");
       setFoods(data);
     };
     fetchFood();
   }, []);
+
+  const filteredFoods = activeCategory === "All" ? foods : foods.filter((food)=> food.category === activeCategory)
+
+
+
   return (
     <>
       <div className="flex h-screen bg-gray-100">
