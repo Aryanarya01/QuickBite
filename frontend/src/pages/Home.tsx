@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Food } from "../types/Food";
 import { apiFetch } from "../api/api";
-import { useCart } from "../context/CardContext";
+import { useCart } from "../context/CartContext";
 
 const Home = () => {
   const { addToCart } = useCart();
