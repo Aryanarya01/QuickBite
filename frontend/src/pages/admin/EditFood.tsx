@@ -24,25 +24,29 @@ const EditFood = ()=>{
 
   const handelUpdate = async()=>{
    try{
-     const data = await apiFetch(`/foods/${id}`,{
+      await apiFetch(`/foods/${id}`,{
         method : "PUT",
         body :JSON.stringify({name,price,category,description}),
     });
      alert("Updated Succesfully!");
-     
-    navigate("/")
+    navigate("/admin/manage-foods")
    }catch(err :any){
     alert(err.message)
    }
   }
     return(
         <>
-        <div>
-            <input value={name} onChange={(e)=>setName(e.target.value)} />
-            <input value={price} onChange={(e)=>setPrice(e.target.value)} />
-            <input value={description} onChange={(e)=>setDescription(e.target.value)} />
-            <input value={category} onChange={(e)=>setCategory(e.target.value)} />
-            <button onClick={handelUpdate}>Update Food</button>
+        <div className="min-h-screen text-white bg-[#1a1a1a] flex items-center justify-between ">
+            <div>
+                 <h2 className="text-xl font-bold mb-4">
+              Edit Food 🍔
+            </h2>
+                <input value={name} onChange={(e)=>setName(e.target.value)} />
+                <input value={price} onChange={(e)=>setPrice(e.target.value)} />
+                <input value={description} onChange={(e)=>setDescription(e.target.value)} />
+                <input value={category} onChange={(e)=>setCategory(e.target.value)} />
+                <button onClick={handelUpdate}>Update Food</button>
+            </div>
         </div>
         </>
         
