@@ -44,11 +44,23 @@ const [activeCategory, setActiveCategory] = useState("All");
       {/* Main content */}
       <div className="flex-1 p-6 overflow-y-auto ">
         <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
+        {/* search box */}
          <input
           type="text"
           placeholder="Search food..."
           className="w-full p-3 rounded-full border mb-6"
         />
+          
+      {/* Category selector */}
+      <div className="flex gap-4 overflow-x-auto mb-6">
+        {categories.map((cat)=>(
+          <button key={cat} onClick={()=>setActiveCategory(cat)} className={`px-4 py-2 rounded-full whitespace-nowrap ${
+        activeCategory === cat
+          ? "bg-orange-500 text-white"
+          : "bg-white shadow"
+      }`}>{cat}</button>
+        ))}
+      </div>
 
 
         {/* foodGrid */}
