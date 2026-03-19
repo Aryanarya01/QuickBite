@@ -36,7 +36,7 @@ const EditFood = ()=>{
   }
     return(
         <>
-        <div className="min-h-screen text-white bg-[#0f0f0f] flex items-center justify-between ">
+        <div className="min-h-screen text-white bg-[#0f0f0f] flex items-center justify-center">
             <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
                  <h2 className="text-xl font-bold mb-4">
               Edit Food 🍔
@@ -45,7 +45,7 @@ const EditFood = ()=>{
                 <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={price} placeholder="Price" onChange={(e)=>setPrice(e.target.value)} />
                 <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={description} placeholder="Description" onChange={(e)=>setDescription(e.target.value)} />
                 <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={category} placeholder="Category" onChange={(e)=>setCategory(e.target.value)} />
-                <button className="" onClick={handelUpdate}>Update Food</button>
+                <button className="w-full py-2 bg-orange-500 hover:bg-orange-600 rounded transition" onClick={handelUpdate}>Update Food</button>
             </div>
         </div>
         </>
