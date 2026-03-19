@@ -37,37 +37,39 @@ const AddFood = () => {
   };
   return (
     <>
-      <div>
-        <h1>Add Food 🍔</h1>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="file"
-          onChange={(e) => setImage(e.target.files?.[0] || null)}
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        />
-        <button onClick={handelAdd}>Add Food</button>
+      <div className="min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
+        <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
+          <h1 className="">Add Food 🍔</h1>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="file"
+            onChange={(e) => setImage(e.target.files?.[0] || null)}
+          />
+          <input
+            type="number"
+            placeholder="Price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
+          <button onClick={handelAdd}>Add Food</button>
+        </div>
       </div>
     </>
   );
