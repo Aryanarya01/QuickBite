@@ -6,8 +6,17 @@ import { useCart } from "../context/CardContext";
 
 const Home = () => {
   const {addToCart} = useCart();
-
   const [foods, setFoods] = useState<Food[]>([]);
+  const categories = [
+  "All",
+  "Burger",
+  "Pizza",
+  "Sushi",
+  "Dessert",
+  "Drinks",
+];
+
+const [activeCategory, setActiveCategory] = useState("All");
   useEffect(() => {
     const fetchFood = async () => {
       const data = await apiFetch("/foods");
