@@ -40,7 +40,13 @@ const ManageFood = () => {
         <h1>Manage Food</h1>
         {foods.map((food: any) => (
           <div key={food._id}>
+             
             <h3>{food.name}</h3>
+             <p className="text-gray-400 text-sm">
+                ₹{food.price}
+              </p>
+              <p>{food.description}</p>
+              <p>{food.category}</p>
             <button onClick={() => deleteFood(food._id)}>Delete</button>
             <button onClick={()=> navigate(`/admin/edit-food/${food._id}`)} >Edit</button>
           </div>
