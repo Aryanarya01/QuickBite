@@ -73,7 +73,12 @@ const AddFood = () => {
             onChange={(e) => setCategory(e.target.value)}
             className="w-full p-2 mb-3 border bg-[#0f0f0f] outline-none rounded border-gray-700"
           />
-          <button className="w-full bg-orange-500 hover:bg-orange-600 rounded transition py-2" onClick={handelAdd}>Add Food</button>
+          <button
+            className="w-full bg-orange-500 hover:bg-orange-600 rounded transition py-2"
+            onClick={handelAdd}
+          >
+            Add Food
+          </button>
         </div>
       </div>
     </>
