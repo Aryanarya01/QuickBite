@@ -20,20 +20,20 @@
     };
   
 
-  const getStatusColor = (status: string) => {
-      switch (status) {
-        case "Pending":
-          return "gray";
-        case "Preparing":
-          return "orange";
-        case "Out for delivery":
-          return "blue";
-        case "Delivered":
-          return "green";
-        default:
-          return "black";
-      }
-    };
+ const getStatusColor = (status: string) => {
+    switch (status) {
+      case "Pending":
+        return "bg-gray-600";
+      case "Preparing":
+        return "bg-orange-500";
+      case "Out for delivery":
+        return "bg-blue-500";
+      case "Delivered":
+        return "bg-green-500";
+      default:
+        return "bg-gray-600";
+    }
+  };
 
     return (
       <div>
@@ -59,7 +59,7 @@
                   <td><span className={`px-2 py-1 rounded text-sm ${getStatusColor(order.status)}`}>{order.status}</span></td>
                   {/* Dropdown */}
                   <td>
-                    <select value={order.status} onChange={(e)=>updateStatus(order.id,e.target.value)}>
+                    <select value={order.status} onChange={(e)=>updateStatus(order._id,e.target.value)}>
                          <option value="Pending">Pending</option>
                     <option value="Preparing">Preparing</option>
                     <option value="Out for delivery">
