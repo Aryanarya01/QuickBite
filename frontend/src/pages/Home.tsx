@@ -56,21 +56,35 @@ const Home = () => {
           />
 
           {/* Category selector */}
-          <div className="flex gap-4 overflow-x-auto mb-6">
+          <div className="flex gap-4 overflow-x-auto mb-8">
             {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full whitespace-nowrap ${
-                  activeCategory === cat
-                    ? "bg-orange-500 text-white"
-                    : "bg-[#1a1a1a] shadow"
-                }`}
-              >
-                {cat}
-              </button>
+                 <div key={cat.name} onClick={()=>setActiveCategory(cat.name)}  className="flex flex-col items-center cursor-pointer">
+                    {/* Circle */}
+      <div
+        className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl transition
+        ${
+          activeCategory === cat.name
+            ? "bg-orange-500 text-white shadow-[0_0_15px_rgba(255,115,0,0.7)]"
+            : "bg-[#1a1a1a] text-gray-300"
+        }`}
+      >
+        {cat.icon}
+      </div>
+
+      {/* Label */}
+      <p
+        className={`mt-2 text-sm ${
+          activeCategory === cat.name
+            ? "text-orange-500"
+            : "text-gray-400"
+        }`}
+      >
+        {cat.name}
+      </p>
+              </div>
             ))}
           </div>
+           
 
           {/* foodGrid */}
           <div className="grid grid-cols-4 gap-6">
