@@ -68,7 +68,6 @@
                     <option value="Delivered">Delivered</option>
                     </select>
                   </td>
-                  
                   <td>{order.user?.name}</td>
                 </tr>
               ))}
