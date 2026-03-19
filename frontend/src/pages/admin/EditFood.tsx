@@ -41,10 +41,10 @@ const EditFood = ()=>{
                  <h2 className="text-xl font-bold mb-4">
               Edit Food 🍔
             </h2>
-                <input value={name} onChange={(e)=>setName(e.target.value)} />
-                <input value={price} onChange={(e)=>setPrice(e.target.value)} />
-                <input value={description} onChange={(e)=>setDescription(e.target.value)} />
-                <input value={category} onChange={(e)=>setCategory(e.target.value)} />
+                <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={name} placeholder="Food Name" onChange={(e)=>setName(e.target.value)} />
+                <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={price} placeholder="Price" onChange={(e)=>setPrice(e.target.value)} />
+                <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={description} placeholder="Description" onChange={(e)=>setDescription(e.target.value)} />
+                <input className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded" value={category} placeholder="Category" onChange={(e)=>setCategory(e.target.value)} />
                 <button onClick={handelUpdate}>Update Food</button>
             </div>
         </div>
