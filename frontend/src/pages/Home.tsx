@@ -65,7 +65,7 @@ const Home = () => {
               >
                 {/* Circle */}
                 <div
-                  className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl transition
+                  className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl transition hover:scale-110
         ${
           activeCategory === cat.name
             ? "bg-orange-500 text-white shadow-[0_0_15px_rgba(255,115,0,0.7)]"
