@@ -7,14 +7,14 @@ const Home = () => {
   const { addToCart,cart,totalPrice } = useCart();
   const [foods, setFoods] = useState<Food[]>([]);
   const categories = [
-    "All",
-    "Burger",
-    "Pizza",
-    "Sushi",
-    "Dessert",
-    "Drinks",
-    "Sweet",
-    "INDIAN",
+    { name: "All", icon: "🍽️" },
+  { name: "Burger", icon: "🍔" },
+  { name: "Pizza", icon: "🍕" },
+  { name: "Sushi", icon: "🍣" },
+  { name: "Dessert", icon: "🍰" },
+  { name: "Drinks", icon: "🥤" },
+   { name: "Sweet", icon: "🍰" },
+  { name: "INDIAN", icon: "🥤" },
   ];
   const [activeCategory, setActiveCategory] = useState("All");
   useEffect(() => {
@@ -52,7 +52,7 @@ const Home = () => {
           <input
             type="text"
             placeholder="Search food..."
-            className="w-full p-3 rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)]"
+            className="w-full p-3 rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)] "
           />
 
           {/* Category selector */}
@@ -64,7 +64,7 @@ const Home = () => {
                 className={`px-4 py-2 rounded-full whitespace-nowrap ${
                   activeCategory === cat
                     ? "bg-orange-500 text-white"
-                    : "bg-white shadow"
+                    : "bg-[#1a1a1a] shadow"
                 }`}
               >
                 {cat}
@@ -77,7 +77,7 @@ const Home = () => {
             {filteredFoods.map((food) => (
               <div
                 key={food._id}
-                className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition"
+                className="bg-[#1a1a1a] p-4 rounded-lg shadow-md hover:shadow-orange-500/30 transition"
               >
                 <img
                   src={food.image}
@@ -88,7 +88,7 @@ const Home = () => {
                 <p className="text-gray-600 text-sm">{food.category}</p>
                 <button
                   onClick={() => addToCart(food)}
-                  className="mt-3 w-full bg-orange-500 text-white py-2 rounded"
+                  className="mt-3 w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600"
                 >
                   Add to Cart
                 </button>
@@ -101,7 +101,7 @@ const Home = () => {
 
 
         {/* Right Cart */}
-        <div className="w-72 bg-white p-5 shadow-md">
+        <div className="w-72 bg-[#1a1a1a] p-5 shadow-lg">
           <h2 className="text-xl font-semibold mb-4">Your Feast 🍔</h2>
 
            {
