@@ -36,8 +36,8 @@ const EditFood = ()=>{
   }
     return(
         <>
-        <div className="min-h-screen text-white bg-[#1a1a1a] flex items-center justify-between ">
-            <div>
+        <div className="min-h-screen text-white bg-[#0f0f0f] flex items-center justify-between ">
+            <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
                  <h2 className="text-xl font-bold mb-4">
               Edit Food 🍔
             </h2>
