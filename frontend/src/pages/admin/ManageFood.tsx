@@ -36,21 +36,23 @@ const ManageFood = () => {
   };
   return (
     <>
-      <div>
-        <h1>Manage Food</h1>
-        {foods.map((food: any) => (
-          <div key={food._id}>
-             
-            <h3>{food.name}</h3>
-             <p className="text-gray-400 text-sm">
-                ₹{food.price}
-              </p>
-              <p>{food.description}</p>
-              <p>{food.category}</p>
-            <button onClick={() => deleteFood(food._id)}>Delete</button>
-            <button onClick={()=> navigate(`/admin/edit-food/${food._id}`)} >Edit</button>
-          </div>
-        ))}
+      <div className="min-h-screen bg-[#0f0f0f] text-white p-6">
+        <h1 className="text-2xl font-bold mb-6">Manage Food 🍔</h1>
+        <div className="grid grid-cols-4 gap-8">
+          {foods.map((food: any) => (
+            <div key={food._id} className="bg-[#1a1a1a] rounded-lg p-4 shadow hover:shadow-orange-500/30 transition">
+               <img src={food.image} className="w-full h-40 object-cover rounded"/>
+              <h3 className="mt-3 text-lg font-semibold">{food.name}</h3>
+               <p className="text-gray-400 text-sm">
+                  ₹{food.price}
+                </p>
+                <p className="text-gray-500 text-sm line-clamp-2">{food.description}</p>
+                <p className="text-xs text-orange-500 mt-1">{food.category}</p>
+              <button onClick={() => deleteFood(food._id)}>Delete</button>
+              <button onClick={()=> navigate(`/admin/edit-food/${food._id}`)} >Edit</button>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
