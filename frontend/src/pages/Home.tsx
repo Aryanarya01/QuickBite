@@ -32,16 +32,16 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-screen bg-[#0f0f0f] text-white">
         {/* Slidebar */}
-        <div className="w-64 bg-white p-5 shadow-md">
+        <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
           <h1 className="text-2xl font-bold text-orange-500 mb-8">quickBite</h1>
-          <ul className="space-y-5">
+          <ul className="space-y-5 text-gray-300">
             <li className="text-orange-500 font-semibold">Home</li>
-            <li>Explore</li>
-            <li>My Orders</li>
-            <li>Cart</li>
-            <li>Profile</li>
+            <li className="hover:text-orange-500 cursor-pointer">Explore</li>
+            <li className="hover:text-orange-500 cursor-pointer">My Orders</li>
+            <li className="hover:text-orange-500 cursor-pointer">Cart</li>
+            <li className="hover:text-orange-500 cursor-pointer">Profile</li>
           </ul>
         </div>
 
@@ -52,7 +52,7 @@ const Home = () => {
           <input
             type="text"
             placeholder="Search food..."
-            className="w-full p-3 rounded-full border mb-6"
+            className="w-full p-3 rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)]"
           />
 
           {/* Category selector */}
