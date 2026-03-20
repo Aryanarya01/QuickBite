@@ -39,8 +39,8 @@ const MyOrder = () => {
         {orders.map((order) => (
           <div key={order._id} className="bg-[#1a1a1a] p-4 rounded-lg shadow hover:shadow-orange-500/30 transition">
             <p className="text-sm text-gray-400">Order ID: {order._id.slice(-6)}</p>
-            <p className="mt-2 text-sm">Address :📍{order.address}</p>
-            <p className="mt-2 font-semibold">Total : ₹{order.totalPrice}</p>
+            <p className="mt-2 text-sm">📍{order.address}</p>
+            <p className="mt-2 font-semibold">₹{order.totalPrice}</p>
             <p className="mt-3"><span className={`px-2 py-1 rounded text-sm ${getStatusStyle(order.status)}`}>{order.status}</span></p>
           </div>
         ))}
