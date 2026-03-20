@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Food } from "../types/Food";
 import { apiFetch } from "../api/api";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
@@ -37,11 +38,11 @@ const Home = () => {
         <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
           <h1 className="text-2xl font-bold text-orange-500 mb-8">quickBite</h1>
           <ul className="space-y-5 text-gray-300">
-            <li className="text-orange-500 font-semibold">Home</li>
-            <li className="hover:text-orange-500 cursor-pointer">Explore</li>
-            <li className="hover:text-orange-500 cursor-pointer">My Orders</li>
-            <li className="hover:text-orange-500 cursor-pointer">Cart</li>
-            <li className="hover:text-orange-500 cursor-pointer">Profile</li>
+            <li className="text-orange-500 font-semibold"><Link to="/">Home</Link></li>
+            <li className="hover:text-orange-500 cursor-pointer"><Link to="">Explore</Link></li>
+            <li className="hover:text-orange-500 cursor-pointer"><Link to="/orders">My Orders</Link></li>
+            <li className="hover:text-orange-500 cursor-pointer"><Link to="/cart">Cart</Link></li>
+            <li className="hover:text-orange-500 cursor-pointer"><Link to="/profile">Profile</Link></li>
           </ul>
         </div>
 
