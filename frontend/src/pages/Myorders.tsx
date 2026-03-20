@@ -12,10 +12,26 @@ const MyOrder = () => {
     };
     fetchOrders();
   }, []);
+
+  const getStatusStyle = (status : string)=>{
+    switch (status){
+      case "Pending":
+        return "bg-gray-600";
+      case "Preparing":
+        return "bg-orange-500";
+      case "Out for delivery":
+        return "bg-blue-500";
+      case "Delivered":
+        return "bg-green-500";
+      default:
+        return "bg-gray-600";
+    }
+  }
+
   return (
     <>
-      <div>
-        <h1>My Orders...</h1>
+      <div className="min-h-screen text-white bg-[#0f0f0f] p-6">
+        <h1 className="text-2xl font-bold mb-6">My Orders 📦</h1>
         {orders.length === 0 && <p>No orders yet!</p>}
         {orders.map((order) => (
           <div key={order._id}>
