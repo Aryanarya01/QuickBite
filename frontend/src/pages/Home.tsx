@@ -39,7 +39,7 @@ const Home = () => {
           <h1 className="text-2xl font-bold text-orange-500 mb-8">quickBite</h1>
           <ul className="space-y-5 text-gray-300">
             <li className="text-orange-500 font-semibold"><Link to="/">Home</Link></li>
-            <li className="hover:text-orange-500 cursor-pointer"><Link to="">Explore</Link></li>
+            <li className="hover:text-orange-500 cursor-pointer"><Link to="/">Explore</Link></li>
             <li className="hover:text-orange-500 cursor-pointer"><Link to="/orders">My Orders</Link></li>
             <li className="hover:text-orange-500 cursor-pointer"><Link to="/cart">Cart</Link></li>
             <li className="hover:text-orange-500 cursor-pointer"><Link to="/profile">Profile</Link></li>
