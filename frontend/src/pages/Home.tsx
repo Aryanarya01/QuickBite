@@ -33,19 +33,40 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex h-screen bg-[#0f0f0f] text-white">
-        {/* Slidebar */}
-        <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
-          <h1 className="text-2xl font-bold text-orange-500 mb-8">quickBite</h1>
-          <ul className="space-y-5 text-gray-300">
-            <li className="text-orange-500 font-semibold"><Link to="/">Home</Link></li>
-            <li className="hover:text-orange-500 cursor-pointer"><Link to="/">Explore</Link></li>
-            <li className="hover:text-orange-500 cursor-pointer"><Link to="/orders">My Orders</Link></li>
-            <li className="hover:text-orange-500 cursor-pointer"><Link to="/cart">Cart</Link></li>
-            <li className="hover:text-orange-500 cursor-pointer"><Link to="/profile">Profile</Link></li>
-          </ul>
-        </div>
+   <div className="flex h-screen bg-[#0f0f0f] text-white">
+  
+  {/* Sidebar */}
+  <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
+    
+    <h1 className="text-2xl font-bold text-orange-500 mb-8">
+      quickBite
+    </h1>
 
+    <div className="flex flex-col gap-5 text-gray-300">
+
+      <Link to="/" className="hover:text-orange-500">
+        Home
+      </Link>
+
+      <Link to="/" className="hover:text-orange-500">
+        Explore
+      </Link>
+
+      <Link to="/orders" className="hover:text-orange-500">
+        My Orders
+      </Link>
+
+      <Link to="/cart" className="hover:text-orange-500">
+        Cart
+      </Link>
+
+      <Link to="/profile" className="hover:text-orange-500">
+        Profile
+      </Link>
+
+    </div>
+
+  </div>
         {/* Main content */}
         <div className="flex-1 p-6 overflow-y-auto ">
           <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
