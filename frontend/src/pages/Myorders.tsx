@@ -29,10 +29,13 @@ const MyOrder = () => {
   }
 
   return (
-    <>
+     
       <div className="min-h-screen text-white bg-[#0f0f0f] p-6">
         <h1 className="text-2xl font-bold mb-6">My Orders 📦</h1>
-        {orders.length === 0 && <p>No orders yet!</p>}
+        {orders.length === 0 ?
+        ( <p className="text-gray-400">No orders yet!</p>)
+        : (
+          <div> 
         {orders.map((order) => (
           <div key={order._id}>
             <p>Order ID: {order._id}</p>
@@ -41,8 +44,10 @@ const MyOrder = () => {
             <p>Status : {order.status}</p>
           </div>
         ))}
+        </div>
+        )}
       </div>
-    </>
+     
   );
 };
 export default MyOrder;
