@@ -12,7 +12,6 @@ const Navbar = () => {
       <div className="flex gap-4 items-center">
         {user && (
           <>
-        
             <button className="bg-orange-500 rounded py-1 px-4 hover:bg-orange-600" onClick={logout}>Logout</button>
           </>
         )}
