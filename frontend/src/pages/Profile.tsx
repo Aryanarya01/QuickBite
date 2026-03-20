@@ -6,19 +6,19 @@ const Profile = () => {
     
       <div className="min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
         <div className="bg-[#1a1a1a] w-96 p-6 rounded-lg shadow hover:shadow-orange-500/30 transition">
-          <h1>{user?.name}'s Profile 👤</h1>
+          <h1 className="text-xl font-bold mb-4">{user?.name}'s Profile 👤</h1>
           <div className="space-y-2 text-gray-300">
             <p>
-              <strong>Name :</strong>
+              <span className="font-semibold text-white">Name :</span>{" "}
               {user?.name}
             </p>
             <p>
-              <strong>email :</strong>
+              <span className="font-semibold text-white">Email :</span>{" "}
               {user?.email}
             </p>
             <p>
-              <strong>Role :</strong>
-              {user?.role}
+              <span className="font-semibold text-white">Role :</span>{" "}
+              <span className="text-orange-500">{user?.role}</span>
             </p>
           </div>
           <button onClick={logout}>Logout</button>
