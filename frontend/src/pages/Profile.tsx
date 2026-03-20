@@ -21,7 +21,7 @@ const Profile = () => {
               <span className="text-orange-500">{user?.role}</span>
             </p>
           </div>
-          <button onClick={logout}>Logout</button>
+          <button onClick={logout} className="mt-6 py-2 w-full bg-orange-500 rounded hover:bg-orange-600 transition">Logout</button>
         </div>
       </div>
   );
