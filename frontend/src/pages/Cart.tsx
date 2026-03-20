@@ -35,7 +35,7 @@ const Cart = () => {
 
                   <button
                     onClick={() => increaseQty(item.food._id)}
-                    className="px-2 py-1 bg-gray-200 rounded"
+                    className="px-2 py-1 bg-orange-500 rounded"
                   >
                     +
                   </button>
