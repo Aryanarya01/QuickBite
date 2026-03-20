@@ -62,14 +62,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/cart"
-          element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          }
-        />
+        
 
         <Route
           path="/checkout"
