@@ -61,7 +61,11 @@ const Home = () => {
       <Link to="/profile" className="hover:text-orange-500">
         Profile
       </Link>
-
+      {
+        user?.role === "admin"&&(
+          <Link to="/admin" className="mt-4 font-semibold text-orange-500 hover:underline">Admin</Link>
+        )
+      }
     </div>
 
   </div>
