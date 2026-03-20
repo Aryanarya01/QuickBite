@@ -35,10 +35,10 @@ const MyOrder = () => {
         {orders.length === 0 ?
         ( <p className="text-gray-400">No orders yet!</p>)
         : (
-          <div> 
+          <div className="grid grid-cols-3 gap-6"> 
         {orders.map((order) => (
-          <div key={order._id}>
-            <p>Order ID: {order._id}</p>
+          <div key={order._id} className="bg-[#1a1a1a] p-4 rounded-lg shadow hover:shadow-orange-500/30 transition">
+            <p className="text-sm text-gray-400">Order ID: {order._id.slice(-6)}</p>
             <p>Address :{order.address}</p>
             <p>Total : {order.totalPrice}</p>
             <p>Status : {order.status}</p>
