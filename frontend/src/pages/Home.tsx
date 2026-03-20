@@ -39,7 +39,7 @@ const Home = () => {
   <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
     
     <h1 className="text-2xl font-bold text-orange-500 mb-8">
-      quickBite
+      QuickBite
     </h1>
 
     <div className="flex flex-col gap-5 text-gray-300">
@@ -47,11 +47,7 @@ const Home = () => {
       <Link to="/" className="hover:text-orange-500">
         Home
       </Link>
-
-      <Link to="/" className="hover:text-orange-500">
-        Explore
-      </Link>
-
+ 
       <Link to="/orders" className="hover:text-orange-500">
         My Orders
       </Link>
@@ -68,7 +64,7 @@ const Home = () => {
 
   </div>
         {/* Main content */}
-        <div className="flex-1 p-6 overflow-y-auto ">
+        <div className="flex-1 p-6 overflow-y-auto">
           <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
           {/* search box */}
           <input
