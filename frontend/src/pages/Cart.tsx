@@ -18,12 +18,15 @@ const Cart = () => {
                 className="p-4 rounded-xl shadow flex justify-between items-center bg-[#1a1a1a]"
               >
                 {/* Left */}
-                <div className="flex items-center gap-4"> 
-                  <img src={`${item.food.image}?w=100&h=100&fit=crop`} className="w-16 h-16 object-cover rounded"/>
-                <div>
-                  <h3 className="font-semibold">{item.food.name}</h3>
-                  <p className="text-sm text-gray-400">₹{item.food.price}</p>
-                </div>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={`${item.food.image}?w=100&h=100&fit=crop`}
+                    className="w-16 h-16 object-cover rounded"
+                  />
+                  <div>
+                    <h3 className="font-semibold">{item.food.name}</h3>
+                    <p className="text-sm text-gray-400">₹{item.food.price}</p>
+                  </div>
                 </div>
                 {/* Middle quantity */}
                 <div className="flex items-center gap-3">
@@ -43,20 +46,20 @@ const Cart = () => {
                     +
                   </button>
                 </div>
-              {/* right */}
-              <div className="text-right">
-                {/* Price */}
-                <p className="text-orange-400 font-semibold">
-                  ₹{item.food.price * item.quantity}
-                </p>
+                {/* right */}
+                <div className="text-right">
+                  {/* Price */}
+                  <p className="text-orange-400 font-semibold">
+                    ₹{item.food.price * item.quantity}
+                  </p>
 
-                {/* Remove */}
-                <button
-                  onClick={() => removeFromCart(item.food._id)}
-                  className="text-red-400 text-sm mt-1"
-                >
-                  Remove
-                </button>
+                  {/* Remove */}
+                  <button
+                    onClick={() => removeFromCart(item.food._id)}
+                    className="text-red-400 text-sm mt-1"
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             ))}
