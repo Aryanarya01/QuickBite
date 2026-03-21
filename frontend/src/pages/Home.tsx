@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import type { Food } from "../types/Food";
 import { apiFetch } from "../api/api";
 import { useCart } from "../context/CartContext";
-import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import Sidebar from "../Components/SideBar";
 
 const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
@@ -38,7 +38,7 @@ const Home = () => {
    <div className="flex h-screen bg-[#0f0f0f] text-white">
   
   {/* Sidebar */}
-   
+   <Sidebar />
         {/* Main content */}
         <div className="flex-1 p-6 overflow-y-auto">
           <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
