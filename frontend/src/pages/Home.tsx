@@ -4,6 +4,7 @@ import { apiFetch } from "../api/api";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import Sidebar from "../Components/SideBar";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
@@ -139,9 +140,12 @@ const Home = () => {
             <p className="font-semibold">Total : ₹{totalPrice} </p>
           </div>
 
-          <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded">
-            View Cart
-          </button>
+         <Link
+  to="/cart"
+  className="mt-6 w-full bg-orange-500 text-white py-2 rounded block text-center"
+>
+  View Cart
+</Link>
         </div>
       </div>
     </>
