@@ -28,16 +28,20 @@ const Checkout = () => {
   };
   return (
     <>
-      <div>
-        <h1>Checkout</h1>
-        <input
-          type="text"
-          placeholder="Enter address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-        <h2>Total : {totalPrice}</h2>
-        <button onClick={handelOrder}>Place Order</button>
+      <div className="flex items-center justify-center min-h-screen bg-gray-300">
+         
+        <div className="bg-white p-6 w-80 rounded-lg shadow">
+          <h1 className="text-2xl font-bold text-orange-500 mb-4">Checkout</h1>
+          <input
+          className="w-full border p-2 mb-3 rounded"
+            type="text"
+            placeholder="📍Enter address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <h2 className="text-sm font-bold">Total : ₹{totalPrice}</h2>
+          <button onClick={handelOrder}>Place Order</button>
+        </div>
       </div>
     </>
   );
