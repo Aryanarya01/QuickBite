@@ -38,37 +38,7 @@ const Home = () => {
    <div className="flex h-screen bg-[#0f0f0f] text-white">
   
   {/* Sidebar */}
-  <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
-    
-    <h1 className="text-2xl font-bold text-orange-500 mb-8">
-      QuickBite
-    </h1>
-
-    <div className="flex flex-col gap-5 text-gray-300">
-
-      <Link to="/" className="hover:text-orange-500">
-        Home
-      </Link>
- 
-      <Link to="/orders" className="hover:text-orange-500">
-        My Orders
-      </Link>
-
-      <Link to="/cart" className="hover:text-orange-500">
-        Cart
-      </Link>
-
-      <Link to="/profile" className="hover:text-orange-500">
-        Profile
-      </Link>
-      {
-        user?.role === "admin"&&(
-          <Link to="/admin" className="mt-4 font-semibold text-orange-500 hover:underline">Admin</Link>
-        )
-      }
-    </div>
-
-  </div>
+   
         {/* Main content */}
         <div className="flex-1 p-6 overflow-y-auto">
           <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
