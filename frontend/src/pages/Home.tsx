@@ -84,25 +84,27 @@ const Home = () => {
           </div>
 
           {/* foodGrid */}
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredFoods.map((food) => (
               <div
                 key={food._id}
-                className="bg-[#1a1a1a] p-4 rounded-lg shadow-md 
+                className="bg-[#1a1a1a] p-4 rounded-xl shadow-md 
                            hover:shadow-orange-500/40 
                             hover:scale-105 
                             transition duration-300 ease-in-out cursor-pointer"
               >
                 <img
-                  src={food.image}
+                    src={`${food.image}?w=400&h=300&fit=crop`}
+                    loading="lazy"
+
                   className="w-full h-40 object-cover rounded"
                 />
                 <h3 className="mt-3 font-semibold text-lg">{food.name}</h3>
-                <p className="text-gray-600 text-sm">₹{food.price}</p>
-                <p className="text-gray-600 text-sm">{food.category}</p>
+                <p className="text-gray-300 text-sm">₹{food.price}</p>
+                <p className="text-gray-400 text-sm">{food.category}</p>
                 <button
                   onClick={() => addToCart(food)}
-                  className="mt-3 w-full bg-orange-500 text-white py-2 rounded 
+                  className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg
                             hover:bg-orange-600 active:scale-95 transition"
                 >
                   Add to Cart
@@ -117,7 +119,7 @@ const Home = () => {
           <h2 className="text-xl font-semibold mb-4">Your Feast 🍔</h2>
 
           {cart.length === 0 ? (
-            <p className="text-gray-500">Cart is empty...</p>
+            <p className="text-gray-500 text-sm">Your cart is empty 🥲</p>
           ) : (
             <div className="space-y-4">
               {cart.map((item) => (
@@ -127,9 +129,9 @@ const Home = () => {
                 >
                   <div>
                     <p className="font-medium">{item.food.name}</p>
-                    <p className="text-sm text-gray-500">x{item.quantity}</p>
+                    <p className="text-sm text-gray-400">x{item.quantity}</p>
                   </div>
-                  <p className="text-sm">₹{item.food.price * item.quantity}</p>
+                  <p className="text-sm text-orange-500">₹{item.food.price * item.quantity}</p>
                 </div>
               ))}
             </div>
