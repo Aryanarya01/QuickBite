@@ -24,6 +24,10 @@ function App() {
   return (
     <>
       <Navbar />
+      <div className="">
+        <div>
+          
+         
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -110,6 +114,8 @@ function App() {
           <EditFood />
         </AdminRoute>} />
       </Routes>
+      </div>
+      </div>
     </>
   );
 }

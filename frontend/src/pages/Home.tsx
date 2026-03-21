@@ -38,7 +38,7 @@ const Home = () => {
    <div className="flex h-screen bg-[#0f0f0f] text-white">
   
   {/* Sidebar */}
-   <Sidebar />
+   {/* <Sidebar /> */}
         {/* Main content */}
         <div className="flex-1 p-6 overflow-y-auto">
           <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
