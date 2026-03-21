@@ -94,9 +94,8 @@ const Home = () => {
                             transition duration-300 ease-in-out cursor-pointer"
               >
                 <img
-                    src={`${food.image}?w=400&h=300&fit=crop`}
-                    loading="lazy"
-
+                  src={`${food.image}?w=400&h=300&fit=crop`}
+                  loading="lazy"
                   className="w-full h-40 object-cover rounded"
                 />
                 <h3 className="mt-3 font-semibold text-lg">{food.name}</h3>
@@ -131,7 +130,9 @@ const Home = () => {
                     <p className="font-medium">{item.food.name}</p>
                     <p className="text-sm text-gray-400">x{item.quantity}</p>
                   </div>
-                  <p className="text-sm text-orange-500">₹{item.food.price * item.quantity}</p>
+                  <p className="text-sm text-orange-500">
+                    ₹{item.food.price * item.quantity}
+                  </p>
                 </div>
               ))}
             </div>
