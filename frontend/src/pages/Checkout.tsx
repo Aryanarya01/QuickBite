@@ -40,7 +40,7 @@ const Checkout = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
           <h2 className="text-sm font-bold">Total : ₹{totalPrice}</h2>
-          <button onClick={handelOrder} className="w-full bg-orange-500 rounded py-2 mt-2 hover:b-or">Place Order</button>
+          <button onClick={handelOrder} className="w-full bg-orange-500 rounded py-2 mt-2 hover:bg-orange-600 transition">Place Order</button>
         </div>
       </div>
     </>
