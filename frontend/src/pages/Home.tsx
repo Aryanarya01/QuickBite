@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
-  const {user} = useAuth();
+  const { user } = useAuth();
   const [foods, setFoods] = useState<Food[]>([]);
   const categories = [
     { name: "All", icon: "🍽️" },
@@ -36,10 +36,9 @@ const Home = () => {
 
   return (
     <>
-   <div className="flex h-screen bg-[#0f0f0f] text-white">
-  
-  {/* Sidebar */}
-   {/* <Sidebar /> */}
+      <div className="flex h-screen bg-[#0f0f0f] text-white">
+        {/* Sidebar */}
+        {/* <Sidebar /> */}
         {/* Main content */}
         <div className="flex-1 p-6 overflow-y-auto">
           <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
@@ -140,12 +139,12 @@ const Home = () => {
             <p className="font-semibold">Total : ₹{totalPrice} </p>
           </div>
 
-         <Link
-  to="/cart"
-  className="mt-6 w-full bg-orange-500 text-white py-2 rounded block text-center"
->
-  View Cart
-</Link>
+          <Link
+            to="/cart"
+            className="mt-6 w-full bg-orange-500 text-white py-2 rounded block text-center"
+          >
+            View Cart
+          </Link>
         </div>
       </div>
     </>
