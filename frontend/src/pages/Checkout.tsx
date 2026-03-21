@@ -40,7 +40,7 @@ const Checkout = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
           <h2 className="text-sm font-bold">Total : ₹{totalPrice}</h2>
-          <button onClick={handelOrder}>Place Order</button>
+          <button onClick={handelOrder} className="w-full bg-">Place Order</button>
         </div>
       </div>
     </>
