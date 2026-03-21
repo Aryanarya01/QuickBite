@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 
 const Sidebar = ()=>{
-    const {} = useAuth();
+    const {user} = useAuth();
     return(
         <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
     
@@ -37,3 +37,4 @@ const Sidebar = ()=>{
   </div>
     )
 }
+export default Sidebar;
