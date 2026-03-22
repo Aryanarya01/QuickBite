@@ -69,10 +69,10 @@ const Cart = () => {
         <div className="mt-8 bg-[#1a1a1a] p-5 rounded-xl shadow">
           <h2 className="text-xl font-semibold">Total: ₹{totalPrice}</h2>
 
-          <Link to="/checkout">
-            <button className="mt-4 block w-full bg-orange-500 text-white py-2 rounded-lg">
+          <Link to="/checkout" className="mt-4 block w-full bg-orange-500 py-2 rounded-lg text-center">
+           
               Proceed to Checkout
-            </button>
+             
           </Link>
         </div>
       </div>
