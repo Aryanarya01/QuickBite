@@ -14,12 +14,14 @@ const AdminDashboard = () => {
           </div>
         </Link>
 
+        {/* Manage food */}
         <Link to="/admin/manage-foods">
           <button className="bg-[#1a1a1a] px-5 py-2 rounded border border-gray-700 hover:border-orange-500 hover:text-orange-500 transition">
             Manage Foods
           </button>
         </Link>
 
+        {/*  */}
         <Link to="/admin/orders">
           <button className="bg-[#1a1a1a] px-5 py-2 rounded border border-gray-700 hover:border-orange-500 hover:text-orange-500 transition">
             Orders
