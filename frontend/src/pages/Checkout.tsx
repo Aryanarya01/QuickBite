@@ -28,19 +28,19 @@ const Checkout = () => {
   };
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen bg-gray-300">
+      <div className="flex items-center justify-center text-white min-h-screen bg-[#0f0f0f]">
          
-        <div className="bg-white p-6 w-80 rounded-lg shadow">
-          <h1 className="text-2xl font-bold text-orange-500 mb-4">Checkout</h1>
+        <div className="bg-[#1a1a1a] p-8 w-full rounded-xl max-w-md shadow-lg">
+          <h1 className="text-2xl font-bold text-orange-500 mb-4">Checkout 🧾</h1>
           <input
-          className="w-full border p-2 mb-3 rounded"
+          className="w-full border border-gray-700 outline-none p-3 mb-4 rounded-lg"
             type="text"
             placeholder="📍Enter address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
           <h2 className="text-sm font-bold">Total : ₹{totalPrice}</h2>
-          <button onClick={handelOrder} className="w-full bg-orange-500 rounded py-2 mt-2 hover:bg-orange-600 transition">Place Order</button>
+          <button onClick={handelOrder} className="w-full bg-orange-500 rounded-lg py-3 active:scale-95 hover:bg-orange-600 transition">Place Order 🚀</button>
         </div>
       </div>
     </>
