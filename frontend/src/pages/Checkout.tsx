@@ -9,6 +9,7 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const handelOrder = async () => {
+    if
     const items = cart.map((item) => ({
       food: item.food._id,
       quantity: item.quantity,
@@ -39,7 +40,10 @@ const Checkout = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-          <h2 className="text-sm font-bold">Total : ₹{totalPrice}</h2>
+          <div className="flex items-center justify-between mb-6">
+            <span className="text-gray-400">Total Amount</span>
+            <span className="text-orange-400 text-lg font-semibold">₹{totalPrice}</span>
+          </div>
           <button onClick={handelOrder} className="w-full bg-orange-500 rounded-lg py-3 active:scale-95 hover:bg-orange-600 transition">Place Order 🚀</button>
         </div>
       </div>
