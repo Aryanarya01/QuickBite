@@ -17,16 +17,16 @@ const AdminDashboard = () => {
         {/* Manage food */}
         <Link to="/admin/manage-foods">
           <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
-             <h2 className="text-xl font-semibold mb-2">🍔 Manage Food</h2>
-             <p className="text-sm text-gray-400">Edit or delete food items</p>
+            <h2 className="text-xl font-semibold mb-2">🍔 Manage Food</h2>
+            <p className="text-sm text-gray-400">Edit or delete food items</p>
           </div>
         </Link>
 
         {/* orders */}
         <Link to="/admin/orders">
           <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
-             <h2 className="text-xl font-semibold mb-2">📦 Orders</h2>
-             <p className="text-sm text-gray-400">Manage customer orders</p>
+            <h2 className="text-xl font-semibold mb-2">📦 Orders</h2>
+            <p className="text-sm text-gray-400">Manage customer orders</p>
           </div>
         </Link>
       </div>
