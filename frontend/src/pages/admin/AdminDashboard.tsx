@@ -4,12 +4,13 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-white p-6">
       
-      <h1 className="text-2xl font-bold mb-6">
-        Admin Dashboard
+      <h1 className="text-3xl font-bold mb-8">
+        Admin Dashboard ⚙️
       </h1>
 
-      <div className="flex gap-6 flex-wrap">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
+        {/* Add food */}
         <Link to="/admin/add-food">
           <button className="bg-orange-500 px-5 py-2 rounded shadow hover:bg-orange-600 transition">
             Add Food
