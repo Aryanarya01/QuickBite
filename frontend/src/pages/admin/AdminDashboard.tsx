@@ -26,7 +26,7 @@ const AdminDashboard = () => {
         <Link to="/admin/orders">
           <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
              <h2 className="text-xl font-semibold mb-2">📦 Orders</h2>
-             <p className="text-sm text-gray-400"></p>
+             <p className="text-sm text-gray-400">Manage customer orders</p>
           </div>
         </Link>
       </div>
