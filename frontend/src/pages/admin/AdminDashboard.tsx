@@ -16,16 +16,16 @@ const AdminDashboard = () => {
 
         {/* Manage food */}
         <Link to="/admin/manage-foods">
-          <button className="bg-[#1a1a1a] px-5 py-2 rounded border border-gray-700 hover:border-orange-500 hover:text-orange-500 transition">
+          <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500 hover:text-orange-500 transition">
             Manage Foods
-          </button>
+          </div>
         </Link>
 
         {/* orders */}
         <Link to="/admin/orders">
-          <button className="bg-[#1a1a1a] px-5 py-2 rounded border border-gray-700 hover:border-orange-500 hover:text-orange-500 transition">
+          <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500 hover:text-orange-500 transition">
             Orders
-          </button>
+          </div>
         </Link>
       </div>
     </div>
