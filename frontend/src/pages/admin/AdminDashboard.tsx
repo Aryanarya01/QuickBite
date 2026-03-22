@@ -16,14 +16,14 @@ const AdminDashboard = () => {
 
         {/* Manage food */}
         <Link to="/admin/manage-foods">
-          <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser transition">
+          <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
             Manage Foods
           </div>
         </Link>
 
         {/* orders */}
         <Link to="/admin/orders">
-          <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser transition">
+          <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
             Orders
           </div>
         </Link>
