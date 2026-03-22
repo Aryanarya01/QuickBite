@@ -9,7 +9,10 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const handelOrder = async () => {
-    if
+    if(!address){
+      alert("Please enter address");
+      return;
+    }
     const items = cart.map((item) => ({
       food: item.food._id,
       quantity: item.quantity,
