@@ -17,14 +17,16 @@ const AdminDashboard = () => {
         {/* Manage food */}
         <Link to="/admin/manage-foods">
           <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
-            Manage Foods
+             <h2></h2>
+             <p className="text-sm text-gray-400"></p>
           </div>
         </Link>
 
         {/* orders */}
         <Link to="/admin/orders">
           <div className="bg-[#1a1a1a] p-6 rounded-xl shadow hover:shadow-orange-500/30 hover:scale-105 text-center curser-pointer transition">
-            Orders
+             <h2></h2>
+             <p className="text-sm text-gray-400"></p>
           </div>
         </Link>
       </div>
