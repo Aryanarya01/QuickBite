@@ -12,9 +12,10 @@ const AdminDashboard = () => {
 
         {/* Add food */}
         <Link to="/admin/add-food">
-          <button className="bg-orange-500 px-5 py-2 rounded shadow hover:bg-orange-600 transition">
-            Add Food
-          </button>
+          <div className="bg-[#1a1a1a] p-6 rounded-xl text-center hover:scale-105 shadow hover:shadow-orange-500/30 transition curser-pointer">
+             <h2 className="text-xl font-semibold mb-2">➕ Add Food</h2>
+             <p className="text-gray-400 text-sm"> Add new food items to menu</p>
+          </div>
         </Link>
 
         <Link to="/admin/manage-foods">
