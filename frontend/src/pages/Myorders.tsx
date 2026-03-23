@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiFetch } from "../api/api";
 import type { Order } from "../types/Order";
+import Sidebar from "../Components/SideBar";
 
 const MyOrder = () => {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -29,7 +30,9 @@ const MyOrder = () => {
   };
 
   return (
-    <div className="min-h-screen text-white bg-[#0f0f0f] p-6">
+    <div className="flex"> 
+    <Sidebar/>
+    <div className="flex-1 min-h-screen text-white bg-[#0f0f0f] p-6">
       <h1 className="text-2xl font-bold mb-6">My Orders 📦</h1>
       {orders.length === 0 ? (
         <p className="text-gray-400">No orders yet!</p>
@@ -57,6 +60,7 @@ const MyOrder = () => {
         </div>
       )}
     </div>
+   </div>
   );
 };
 export default MyOrder;
