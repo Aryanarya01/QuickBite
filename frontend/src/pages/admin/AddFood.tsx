@@ -84,6 +84,7 @@ const AddFood = () => {
           </button>
         </div>
       </div>
+      </div>
     </>
   );
 };
