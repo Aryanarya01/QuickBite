@@ -44,8 +44,8 @@ const ManageFood = () => {
               className="bg-[#1a1a1a] rounded-xl p-4 shadow hover:shadow-orange-500/30 hover:scale-105 transition"
             >
               <img
-                 src={`${food.image}?w=400&h=300&fit=crop`}
-          className="w-full h-40 object-cover rounded"
+                src={`${food.image}?w=400&h=300&fit=crop`}
+                className="w-full h-40 object-cover rounded"
               />
               <h3 className="mt-3 text-lg font-semibold">{food.name}</h3>
               <p className="text-gray-300 text-sm">₹{food.price}</p>
