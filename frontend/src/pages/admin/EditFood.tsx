@@ -39,7 +39,7 @@ const EditFood = () => {
     <>
     <div className="flex"> 
       <Sidebar/>
-      <div className="min-h-screen text-white bg-[#0f0f0f] flex items-center justify-center">
+      <div className="flex-1 min-h-screen text-white bg-[#0f0f0f] flex items-center justify-center">
         <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
           <h2 className="text-xl font-bold mb-4">Edit Food 🍔</h2>
           <input
