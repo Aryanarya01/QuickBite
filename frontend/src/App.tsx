@@ -25,9 +25,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="flex">
-        <Sidebar/>
-        <div className="flex-1">
+      <div>
+         
+       
           
          
       <Routes>
@@ -117,7 +117,7 @@ function App() {
         </AdminRoute>} />
       </Routes>
       </div>
-      </div>
+       
     </>
   );
 }
