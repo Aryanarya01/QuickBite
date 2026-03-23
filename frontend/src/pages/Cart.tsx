@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import Sidebar from "../Components/SideBar";
 
 const Cart = () => {
   const { cart, increaseQty, decreaseQty, totalPrice, removeFromCart } =
     useCart();
   return (
     <>
-      <div className="p-6 bg-[#0f0f0f] min-h-screen text-white">
+      <div className="flex"> 
+    <Sidebar/>
+      <div className="flex-1 p-6 bg-[#0f0f0f] min-h-screen text-white">
         <h1 className="text-2xl font-bold mb-6">Your Cart 🛒</h1>
         {cart.length === 0 ? (
           <p className="text-gray-400">Your cart is empty 🥲</p>
@@ -75,6 +78,7 @@ const Cart = () => {
              
           </Link>
         </div>
+      </div>
       </div>
     </>
   );
