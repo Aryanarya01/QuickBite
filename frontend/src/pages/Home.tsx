@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import type { Food } from "../types/Food";
 import { apiFetch } from "../api/api";
 import { useCart } from "../context/CartContext";
-import { useAuth } from "../context/AuthContext";
+ 
 import Sidebar from "../Components/SideBar";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
-  const { user } = useAuth();
+   
   const [foods, setFoods] = useState<Food[]>([]);
   const categories = [
     { name: "All", icon: "🍽️" },
