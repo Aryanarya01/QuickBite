@@ -6,8 +6,8 @@ const Sidebar = ()=>{
     return(
         <div className="w-64 bg-[#1a1a1a] p-5 shadow-lg">
     
-    <h1 className="text-2xl font-bold text-orange-500 mb-8">
-      QuickBite
+    <h1 className="text-2xl font-bold text-white mb-10">
+      Quick<span className="text-orange-500">Bite</span>
     </h1>
 
     <div className="flex flex-col gap-5 text-gray-300">
