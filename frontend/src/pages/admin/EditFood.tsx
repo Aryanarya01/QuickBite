@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { apiFetch } from "../../api/api";
+import Sidebar from "../../Components/SideBar";
 
 const EditFood = () => {
   const navigate = useNavigate();
@@ -36,7 +37,8 @@ const EditFood = () => {
   };
   return (
     <>
-    <div className="flex"></div>
+    <div className="flex"> 
+      <Sidebar/>
       <div className="min-h-screen text-white bg-[#0f0f0f] flex items-center justify-center">
         <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
           <h2 className="text-xl font-bold mb-4">Edit Food 🍔</h2>
@@ -71,6 +73,7 @@ const EditFood = () => {
             Update Food
           </button>
         </div>
+      </div>
       </div>
     </>
   );
