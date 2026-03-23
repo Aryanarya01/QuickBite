@@ -3,7 +3,9 @@ import { useAuth } from "../context/AuthContext";
 const Profile = () => {
   const { user, logout } = useAuth();
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
+    <div className="flex"> 
+    <Sidebar/>
+    <div className="flex-1 min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
       <div className="bg-[#1a1a1a] w-96 p-6 rounded-lg shadow hover:shadow-orange-500/30 transition">
         <h1 className="text-xl font-bold mb-4">{user?.name}'s Profile 👤</h1>
         <div className="space-y-2 text-gray-300">
