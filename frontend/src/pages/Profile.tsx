@@ -31,6 +31,7 @@ const Profile = () => {
         </button>
       </div>
     </div>
+    </div>
   );
 };
 export default Profile;
