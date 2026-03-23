@@ -32,7 +32,7 @@ const Checkout = () => {
   };
   return (
     <>
-      <div className="flex items-center justify-center text-white min-h-screen bg-[#0f0f0f]">
+      <div className="flex items-center justify-center text-black min-h-screen bg-[#0f0f0f]">
          
         <div className="bg-[#1a1a1a] p-8 w-full rounded-xl max-w-md shadow-lg">
           <h1 className="text-2xl font-bold text-orange-500 mb-4">Checkout 🧾</h1>
