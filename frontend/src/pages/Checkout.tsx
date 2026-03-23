@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { apiFetch } from "../api/api";
+import Sidebar from "../Components/SideBar";
 
 const Checkout = () => {
   const { cart, totalPrice } = useCart();
@@ -51,6 +52,7 @@ const Checkout = () => {
           </div>
           <button onClick={handelOrder} className="w-full bg-orange-500 rounded-lg py-3 active:scale-95 hover:bg-orange-600 transition">Place Order 🚀</button>
         </div>
+      </div>
       </div>
     </>
   );
