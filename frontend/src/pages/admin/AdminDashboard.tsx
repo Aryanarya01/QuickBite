@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import Sidebar from "../../Components/SideBar";
 
 const AdminDashboard = () => {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white p-6">
+    <div className="flex"> 
+    <Sidebar/>
+    <div className="flemin-h-screen bg-[#0f0f0f] text-white p-6">
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard ⚙️</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -30,6 +33,7 @@ const AdminDashboard = () => {
           </div>
         </Link>
       </div>
+    </div>
     </div>
   );
 };
