@@ -41,7 +41,7 @@ const Home = () => {
         {/* <Sidebar /> */}
         {/* Main content */}
         <div className="flex-1 p-6 overflow-y-auto">
-          <h1 className="text-3xl font-bold mb-6">Welcome to quickBite 👋</h1>
+          <h1 className="text-3xl font-bold mb-6">Welcome to Quick<span className="text-orange-500">Bite</span> 👋</h1>
           {/* search box */}
           <input
             type="text"
