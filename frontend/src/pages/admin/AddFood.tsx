@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "../../Components/SideBar";
 
 const AddFood = () => {
   const navigate = useNavigate();
@@ -37,7 +38,8 @@ const AddFood = () => {
   };
   return (
     <>
-    <div className="flex"></div>
+    <div className="flex"> 
+      <Sidebar/>
       <div className="min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
         <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
           <h1 className="text-xl font-bold mb-4">Add Food 🍔</h1>
