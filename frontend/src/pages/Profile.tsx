@@ -1,3 +1,4 @@
+import Sidebar from "../Components/SideBar";
 import { useAuth } from "../context/AuthContext";
 
 const Profile = () => {
