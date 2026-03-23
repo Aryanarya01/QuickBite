@@ -37,11 +37,11 @@ const ManageFood = () => {
     <>
       <div className="min-h-screen bg-[#0f0f0f] text-white p-6">
         <h1 className="text-2xl font-bold mb-6">Manage Food 🍔</h1>
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {foods.map((food: any) => (
             <div
               key={food._id}
-              className="bg-[#1a1a1a] rounded-lg p-4 shadow hover:shadow-orange-500/30 transition"
+              className="bg-[#1a1a1a] rounded-xl p-4 shadow hover:shadow-orange-500/30 hover transition"
             >
               <img
                 src={food.image}
