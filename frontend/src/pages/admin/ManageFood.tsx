@@ -48,11 +48,8 @@ const ManageFood = () => {
           className="w-full h-40 object-cover rounded"
               />
               <h3 className="mt-3 text-lg font-semibold">{food.name}</h3>
-              <p className="text-gray-400 text-sm">₹{food.price}</p>
-              <p className="text-gray-500 text-sm line-clamp-2">
-                {food.description}
-              </p>
-              <p className="text-xs text-orange-500 mt-1">{food.category}</p>
+              <p className="text-gray-300 text-sm">₹{food.price}</p>
+              <p className="text-gray-400 text-sm">{food.category}</p>
               <div className="flex justify-between mt-4">
                 <button
                   className="px-3 border border-gray-600 py-1 rounded hover:border-orange-500 hover:text-orange-500 transition"
