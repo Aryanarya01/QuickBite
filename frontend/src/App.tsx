@@ -19,7 +19,6 @@ import AddFood from "./pages/admin/AddFood";
 import ManageFood from "./pages/admin/ManageFood";
 import Orders from "./pages/admin/Orders";
 import EditFood from "./pages/admin/EditFood";
-import Sidebar from "./Components/SideBar";
 
 function App() {
   return (
