@@ -39,7 +39,7 @@ const ManageFood = () => {
     <div className="flex">
       <Sidebar/>
     
-      <div className="min-h-screen bg-[#0f0f0f] text-white p-6">
+      <div className="flex-1 min-h-screen bg-[#0f0f0f] text-white p-6">
         <h1 className="text-2xl font-bold mb-6">Manage Food 🍔</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {foods.map((food: any) => (
@@ -71,6 +71,7 @@ const ManageFood = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </>
   );
