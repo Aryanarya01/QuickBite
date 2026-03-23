@@ -58,7 +58,7 @@ const ManageFood = () => {
                   Edit
                 </button>
                 <button
-                  className=" w-1/2 py-2 rounded-lg bg-red-500 bg-red-600 transition"
+                  className=" w-1/2 py-2 rounded-lg  bg-red-500 bg-red-600 transition"
                   onClick={() => deleteFood(food._id)}
                 >
                   Delete
