@@ -34,7 +34,7 @@ const Login = () => {
 
       setUser(data);
       navigate("/");
-      window.location.reload();
+     
     } catch (err: any) {
       alert(err.message);
     }
