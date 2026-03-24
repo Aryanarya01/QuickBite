@@ -34,7 +34,7 @@ const Login = () => {
 
       setUser(data);
       navigate("/");
-     
+ 
     } catch (err: any) {
       alert(err.message);
     }
