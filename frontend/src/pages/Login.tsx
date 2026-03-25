@@ -32,7 +32,7 @@ const Login = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      setUser(data.user);
+      setUser(data);
       navigate("/");
     } catch (err: any) {
       alert(err.message);
