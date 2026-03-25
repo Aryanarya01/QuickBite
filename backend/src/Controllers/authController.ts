@@ -67,6 +67,7 @@ export const Login = async (
        sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
       path :"/",
+       domain: ".onrender.com",
     });
     res.status(200).json({
       message: "Login Successfully!",
