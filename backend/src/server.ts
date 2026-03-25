@@ -14,13 +14,9 @@ connectDB();
 
 app.use(
   cors({
-origin: [
-    "http://localhost:5173",
-    "https://quickbite-q5a95l1po-aryanarya01s-projects.vercel.app",
-    "https://quickbite-git-main-aryanarya01s-projects.vercel.app"
-  ],
+    origin: "https://quickbite-q5a95l1po-aryanarya01s-projects.vercel.app",
     credentials: true,
-  }),
+  })
 );
 app.use(cookieParser());
 app.use(express.json());
