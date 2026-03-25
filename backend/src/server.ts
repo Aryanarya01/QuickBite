@@ -14,7 +14,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "https://quickbite-q5a95l1po-aryanarya01s-projects.vercel.app",
+    origin: "https://quickbite-black.vercel.app",
     credentials: true,
   })
 );
