@@ -7,11 +7,12 @@ import orderRouter from "./routes/orderRoutes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 const app = express();
+app.set("trust proxy", 1);
 const port = process.env.PORT || 5000;
 dotenv.config();
 connectDB();
 app.use(cors({
-    origin: true,
+    origin: "https://quickbite-black.vercel.app",
     credentials: true,
 }));
 app.use(cookieParser());

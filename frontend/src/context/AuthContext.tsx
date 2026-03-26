@@ -21,8 +21,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       const data = await apiFetch("/auth/profile");
       setUser(data.user);
     } catch (err) {
+      setUser(null)
+      console.log(err)
       console.log("Not Logged in!");
-      
     } finally {
       setLoading(false);
     }
