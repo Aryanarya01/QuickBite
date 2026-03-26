@@ -1,4 +1,4 @@
-export const API_URL = import.meta.env.VITE_API_URL;
+export const API_URL = import.meta.env.VITE_API_URL || "https://quickbite-hd31.onrender.com/api";
 
 export const apiFetch = async (url: string, options: RequestInit = {}) => {
   const res = await fetch(`${API_URL}${url}`, {
