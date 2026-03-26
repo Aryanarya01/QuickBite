@@ -21,7 +21,7 @@
 ---
 
 ## 🛠 Tech Stack
-- **Frontend:** React, TypeScript, React Router, Axios
+- **Frontend:** React, TypeScript, React Router, Fetch
 - **Backend:** Node.js, Express, MongoDB, JWT
 - **Styling:** Tailwind CSS / CSS
 - **Tools:** Postman / Hoppscotch (API testing)
