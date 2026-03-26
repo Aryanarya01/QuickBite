@@ -1,6 +1,7 @@
 import { User } from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { isProduction } from "../server.js";
 //                          Register function
 export const Register = async (req, res, next) => {
     try {
@@ -54,9 +55,9 @@ export const Login = async (req, res, next) => {
         });
         res.cookie("token", token, {
             httpOnly: true,
-            secure: true,
-            sameSite: "none",
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+            secure: isProduction, // true on deployed, false local
+            sameSite: isProduction ? "none" : "lax",
+            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
             path: "/",
         });
         res.status(200).json({
