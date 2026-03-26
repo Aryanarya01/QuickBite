@@ -6,7 +6,9 @@ import foodRouter from "./routes/foodRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
+ 
 dotenv.config();
 connectDB();
 
@@ -26,7 +28,10 @@ app.use(cors({
     : "http://localhost:5173",             // local frontend
   credentials: true, // allow cookies
 }));
+// Serve frontend build
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+ 
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,6 +41,10 @@ app.use("/api/auth", authRouter);
 app.use("/api/foods", foodRouter);
 app.use("/api/orders", orderRouter);
 
+// Catch-all route for SPA
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+});
 // Test route
 app.get("/", (req, res) => {
   res.send("Server is working!");
