@@ -38,7 +38,7 @@ const Home = () => {
   const filteredFoods = foods.filter((food)=>{
     const matchCategory = activeCategory === "All" || food.category === activeCategory;
     const matchedSearch = food.name.toLowerCase().includes(search.toLowerCase());
-    
+    return matchCategory && matchedSearch;
   })
  
 
