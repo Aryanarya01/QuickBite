@@ -7,7 +7,6 @@ import orderRouter from "./routes/orderRoutes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
-import { fileURLToPath } from "url";
  
 dotenv.config();
 connectDB();
@@ -15,10 +14,9 @@ connectDB();
 const app = express();
 const port = process.env.PORT || 5000;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+ 
 
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
 // Trust proxy for deployed secure cookies
 app.set("trust proxy", 1);
 
@@ -44,10 +42,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/foods", foodRouter);
 app.use("/api/orders", orderRouter);
 
-// Catch-all route for SPA
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
-});
+ 
 // Test route
 app.get("/", (req, res) => {
   res.send("Server is working!");
