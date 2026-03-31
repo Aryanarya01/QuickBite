@@ -52,15 +52,15 @@ const Home = () => {
         {/* Sidebar */}
         <Sidebar />
         {/* Main content */}
-        <div className="flex-1 p-6 overflow-y-auto">
-          <h1 className="text-3xl font-bold mb-6">Welcome to Quick<span className="text-orange-500">Bite</span> 👋</h1>
+        <div className="flex-1 p-4 sm:p-6 overflow-y-auto">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Welcome to Quick<span className="text-orange-500">Bite</span> 👋</h1>
           {/* search box */}
           <input
             type="text"
             placeholder="Search food..."
             value={search}
             onChange={(e)=>setSearch(e.target.value)}
-            className="w-full p-3 rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)] "
+            className="w-full p-2 sm:p-3 text-sm sm:text-base rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)] "
           />
 
           {/* Category selector */}
@@ -110,7 +110,7 @@ const Home = () => {
                 <img
                   src={`${food.image}?w=400&h=300&fit=crop`}
                   loading="lazy"
-                  className="w-full h-40 object-cover rounded"
+                  className="w-full h-32 sm:h-40 object-cover rounded"
                 />
                 <h3 className="mt-3 font-semibold text-lg">{food.name}</h3>
                 <p className="text-gray-300 text-sm">₹{food.price}</p>
