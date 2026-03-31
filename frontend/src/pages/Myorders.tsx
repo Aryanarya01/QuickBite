@@ -31,14 +31,14 @@ const MyOrder = () => {
 
   return (
     <Layout>
-      <div className="flex">
+       
       
-      <div className="flex-1 min-h-screen text-white bg-[#0f0f0f] p-6">
+      <div className="flex-1 min-h-screen text-white bg-[#0f0f0f] p-4 sm:p-6">
         <h1 className="text-2xl font-bold mb-6">My Orders 📦</h1>
         {orders.length === 0 ? (
           <p className="text-gray-400">No orders yet!</p>
         ) : (
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {orders.map((order) => (
               <div
                 key={order._id}
@@ -61,7 +61,7 @@ const MyOrder = () => {
           </div>
         )}
       </div>
-         </div>
+          
     </Layout>
   );
 };
