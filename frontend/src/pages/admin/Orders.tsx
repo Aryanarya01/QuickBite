@@ -37,11 +37,11 @@ const Orders = () => {
 
   return (
     <Layout>
-      <div className="flex">
+       
       
       <div className="flex-1 min-h-screen bg-[#0f0f0f] text-white p-6">
         <h1 className="font-bold text-2xl mb-6">All Orders 📦</h1>
-        <div className="bg-[#1a1a1a] rounded-lg shadow overflow-hidden">
+        <div className="bg-[#1a1a1a] rounded-lg shadow overflow-x-auto">
           <table className="w-full text-left">
             <thead className="b-[#111] text-gray-400">
               <tr>
@@ -85,7 +85,7 @@ const Orders = () => {
           </table>
         </div>
       </div>
-      </div>
+       
     </Layout>
   );
 };

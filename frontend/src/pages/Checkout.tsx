@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { apiFetch } from "../api/api";
-import Sidebar from "../Components/SideBar";
+import Layout from "../Components/Layout";
 
 const Checkout = () => {
   const { cart, totalPrice } = useCart();
@@ -33,27 +33,29 @@ const Checkout = () => {
   };
   return (
     <>
-    <div className="flex"> 
-    <Sidebar/>
-      <div className="flex-1 flex items-center justify-center text-black min-h-screen bg-[#0f0f0f]">
-         
-        <div className="bg-[#1a1a1a] p-8 w-full rounded-xl max-w-md shadow-lg border border-gray-800">
-          <h1 className="text-2xl font-bold text-orange-500 mb-4">Checkout 🧾</h1>
-          <input
-          className="w-full border border-gray-700 outline-none p-3 mb-4 rounded-lg"
-            type="text"
-            placeholder="📍Enter address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          <div className="flex items-center justify-between mb-6">
-            <span className="text-gray-400">Total Amount</span>
-            <span className="text-orange-400 text-lg font-semibold">₹{totalPrice}</span>
+    <Layout>
+      <div className="flex">
+       
+        <div className="flex-1 flex items-center justify-center text-black min-h-screen bg-[#0f0f0f]">
+      
+          <div className="bg-[#1a1a1a] p-8 w-full rounded-xl max-w-md shadow-lg border border-gray-800">
+            <h1 className="text-2xl font-bold text-orange-500 mb-4">Checkout 🧾</h1>
+            <input
+            className="w-full border border-gray-700 outline-none p-3 mb-4 rounded-lg"
+              type="text"
+              placeholder="📍Enter address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-gray-400">Total Amount</span>
+              <span className="text-orange-400 text-lg font-semibold">₹{totalPrice}</span>
+            </div>
+            <button onClick={handelOrder} className="w-full bg-orange-500 rounded-lg py-3 active:scale-95 hover:bg-orange-600 transition">Place Order 🚀</button>
           </div>
-          <button onClick={handelOrder} className="w-full bg-orange-500 rounded-lg py-3 active:scale-95 hover:bg-orange-600 transition">Place Order 🚀</button>
         </div>
-      </div>
-      </div>
+        </div>
+    </Layout>
     </>
   );
 };

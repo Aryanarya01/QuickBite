@@ -8,9 +8,9 @@ const Cart = () => {
   return (
     <>
       <Layout>
-        <div className="flex"> 
+         
              
-        <div className="flex-1 p-6 bg-[#0f0f0f] min-h-screen text-white">
+        <div className="flex-1 p-4 sm:p-6 bg-[#0f0f0f] min-h-screen text-white">
           <h1 className="text-2xl font-bold mb-6">Your Cart 🛒</h1>
           {cart.length === 0 ? (
             <p className="text-gray-400">Your cart is empty 🥲</p>
@@ -22,10 +22,10 @@ const Cart = () => {
                   className="p-4 rounded-xl shadow flex justify-between items-center bg-[#1a1a1a]"
                 >
                   {/* Left */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                     <img
                       src={`${item.food.image}?w=100&h=100&fit=crop`}
-                      className="w-16 h-16 object-cover rounded"
+                      className="w-14 h-14 sm:w-16 sm:h-16 object-cover rounded"
                     />
                     <div>
                       <h3 className="font-semibold">{item.food.name}</h3>
@@ -33,7 +33,7 @@ const Cart = () => {
                     </div>
                   </div>
                   {/* Middle quantity */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 justify-center sm:justify-start">
                     <button
                       onClick={() => decreaseQty(item.food._id)}
                       className="px-2 py-1 bg-gray-700 rounded"
@@ -49,7 +49,7 @@ const Cart = () => {
                     </button>
                   </div>
                   {/* right */}
-                  <div className="text-right">
+                  <div className="text-center sm:text-right">
                     {/* Price */}
                     <p className="text-orange-400 font-semibold">
                       ₹{item.food.price * item.quantity}
@@ -76,7 +76,7 @@ const Cart = () => {
             </Link>
           </div>
         </div>
-        </div>
+         
       </Layout>
     </>
   );
