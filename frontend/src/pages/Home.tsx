@@ -98,7 +98,7 @@ const Home = () => {
           </div>
 
           {/* foodGrid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredFoods.map((food) => (
               <div
                 key={food._id}
@@ -128,7 +128,7 @@ const Home = () => {
         </div>
 
         {/* Right Cart */}
-        <div className="w-72 bg-[#1a1a1a] p-5 shadow-lg">
+        <div className="hidden lg:block w-72 bg-[#1a1a1a] p-5 shadow-lg">
           <h2 className="text-xl font-semibold mb-4">Your Feast 🍔</h2>
 
           {cart.length === 0 ? (
