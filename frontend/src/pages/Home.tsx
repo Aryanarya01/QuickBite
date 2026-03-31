@@ -31,10 +31,20 @@ const Home = () => {
     fetchFood();
   }, []);
 
-  const filteredFoods =
-    activeCategory === "All"
-      ? foods
-      : foods.filter((food) => food.category === activeCategory);
+
+
+
+
+  const filteredFoods = foods.filter((food)=>{
+    const matchCategory = activeCategory === "All" || food.category === activeCategory;
+    const matchedSearch = food.name.toLowerCase().includes(search.toLowerCase());
+    
+  })
+ 
+
+
+
+
 
   return (
     <>
