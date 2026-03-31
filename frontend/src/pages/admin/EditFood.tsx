@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { apiFetch } from "../../api/api";
-import Sidebar from "../../Components/SideBar";
+import Layout from "../../Components/Layout";
 
 const EditFood = () => {
   const navigate = useNavigate();
@@ -37,44 +37,46 @@ const EditFood = () => {
   };
   return (
     <>
-    <div className="flex"> 
-      <Sidebar/>
-      <div className="flex-1 min-h-screen text-white bg-[#0f0f0f] flex items-center justify-center">
-        <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
-          <h2 className="text-xl font-bold mb-4">Edit Food 🍔</h2>
-          <input
-            className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
-            value={name}
-            placeholder="Food Name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
-            value={price}
-            placeholder="Price"
-            onChange={(e) => setPrice(e.target.value)}
-          />
-          <input
-            className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
-            value={description}
-            placeholder="Description"
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <input
-            className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
-            value={category}
-            placeholder="Category"
-            onChange={(e) => setCategory(e.target.value)}
-          />
-          <button
-            className="w-full py-2 bg-orange-500 hover:bg-orange-600 rounded transition"
-            onClick={handelUpdate}
-          >
-            Update Food
-          </button>
+    <Layout>
+      <div className="flex">
+      
+        <div className="flex-1 min-h-screen text-white bg-[#0f0f0f] flex items-center justify-center">
+          <div className="bg-[#1a1a1a] p-6 rounded-lg w-96 shadow">
+            <h2 className="text-xl font-bold mb-4">Edit Food 🍔</h2>
+            <input
+              className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
+              value={name}
+              placeholder="Food Name"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
+              value={price}
+              placeholder="Price"
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            <input
+              className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
+              value={description}
+              placeholder="Description"
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <input
+              className="p-2 mb-3 w-full bg-[#0f0f0f] border outline-none border-gray-700 rounded"
+              value={category}
+              placeholder="Category"
+              onChange={(e) => setCategory(e.target.value)}
+            />
+            <button
+              className="w-full py-2 bg-orange-500 hover:bg-orange-600 rounded transition"
+              onClick={handelUpdate}
+            >
+              Update Food
+            </button>
+          </div>
         </div>
-      </div>
-      </div>
+        </div>
+    </Layout>
     </>
   );
 };
