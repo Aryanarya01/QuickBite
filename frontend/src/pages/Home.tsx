@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import type { Food } from "../types/Food";
 import { apiFetch } from "../api/api";
 import { useCart } from "../context/CartContext";
- 
-import Sidebar from "../Components/SideBar";
+
 import { Link } from "react-router-dom";
+import Layout from "../Components/Layout";
 
 const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
-   
+
   const [foods, setFoods] = useState<Food[]>([]);
-  const [search,setSearch] = useState("");
+  const [search, setSearch] = useState("");
 
   const categories = [
     { name: "All", icon: "🍽️" },
@@ -31,140 +31,135 @@ const Home = () => {
     fetchFood();
   }, []);
 
-
-
-
-
-  const filteredFoods = foods.filter((food)=>{
-    const matchCategory = activeCategory === "All" || food.category === activeCategory;
-    const matchedSearch = food.name.toLowerCase().includes(search.toLowerCase());
+  const filteredFoods = foods.filter((food) => {
+    const matchCategory =
+      activeCategory === "All" || food.category === activeCategory;
+    const matchedSearch = food.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
     return matchCategory && matchedSearch;
-  })
- 
-
-
-
-
+  });
 
   return (
     <>
-      <div className="flex h-screen bg-[#0f0f0f] text-white">
-        {/* Sidebar */}
-        <Sidebar />
-        {/* Main content */}
-        <div className="flex-1 p-4 sm:p-6 overflow-y-auto">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">Welcome to Quick<span className="text-orange-500">Bite</span> 👋</h1>
-          {/* search box */}
-          <input
-            type="text"
-            placeholder="Search food..."
-            value={search}
-            onChange={(e)=>setSearch(e.target.value)}
-            className="w-full p-2 sm:p-3 text-sm sm:text-base rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)] "
-          />
-
-          {/* Category selector */}
-          <div className="flex gap-4 overflow-x-auto mb-8">
-            {categories.map((cat) => (
-              <div
-                key={cat.name}
-                onClick={() => setActiveCategory(cat.name)}
-                className="flex flex-col items-center cursor-pointer"
-              >
-                {/* Circle */}
+      <Layout>
+        <div className="flex h-screen bg-[#0f0f0f] text-white">
+          {/* Sidebar */}
+        
+          {/* Main content */}
+          <div className="flex-1 p-4 sm:p-6 overflow-y-auto">
+          
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6">
+              Welcome to Quick<span className="text-orange-500">Bite</span> 👋
+            </h1>
+            {/* search box */}
+            <input
+              type="text"
+              placeholder="Search food..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full p-2 sm:p-3 text-sm sm:text-base rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)] "
+            />
+            {/* Category selector */}
+            <div className="flex gap-4 overflow-x-auto mb-8">
+              {categories.map((cat) => (
                 <div
-                  className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl transition hover:scale-110
-        ${
-          activeCategory === cat.name
-            ? "bg-orange-500 text-white shadow-[0_0_15px_rgba(255,115,0,0.7)]"
-            : "bg-[#1a1a1a] text-gray-300"
-        }`}
+                  key={cat.name}
+                  onClick={() => setActiveCategory(cat.name)}
+                  className="flex flex-col items-center cursor-pointer"
                 >
-                  {cat.icon}
-                </div>
-
-                {/* Label */}
-                <p
-                  className={`mt-2 text-sm ${
-                    activeCategory === cat.name
-                      ? "text-orange-500"
-                      : "text-gray-400"
-                  }`}
-                >
-                  {cat.name}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* foodGrid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filteredFoods.map((food) => (
-              <div
-                key={food._id}
-                className="bg-[#1a1a1a] p-4 rounded-xl shadow-md 
-                           hover:shadow-orange-500/40 
-                            hover:scale-105 
-                            transition duration-300 ease-in-out cursor-pointer"
-              >
-                <img
-                  src={`${food.image}?w=400&h=300&fit=crop`}
-                  loading="lazy"
-                  className="w-full h-32 sm:h-40 object-cover rounded"
-                />
-                <h3 className="mt-3 font-semibold text-lg">{food.name}</h3>
-                <p className="text-gray-300 text-sm">₹{food.price}</p>
-                <p className="text-gray-400 text-sm">{food.category}</p>
-                <button
-                  onClick={() => addToCart(food)}
-                  className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg
-                            hover:bg-orange-600 active:scale-95 transition"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Cart */}
-        <div className="hidden lg:block w-72 bg-[#1a1a1a] p-5 shadow-lg">
-          <h2 className="text-xl font-semibold mb-4">Your Feast 🍔</h2>
-
-          {cart.length === 0 ? (
-            <p className="text-gray-500 text-sm">Your cart is empty 🥲</p>
-          ) : (
-            <div className="space-y-4">
-              {cart.map((item) => (
-                <div
-                  key={item.food._id}
-                  className="flex justify-between items-center"
-                >
-                  <div>
-                    <p className="font-medium">{item.food.name}</p>
-                    <p className="text-sm text-gray-400">x{item.quantity}</p>
+                  {/* Circle */}
+                  <div
+                    className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl transition hover:scale-110
+          ${
+            activeCategory === cat.name
+              ? "bg-orange-500 text-white shadow-[0_0_15px_rgba(255,115,0,0.7)]"
+              : "bg-[#1a1a1a] text-gray-300"
+          }`}
+                  >
+                    {cat.icon}
                   </div>
-                  <p className="text-sm text-orange-500">
-                    ₹{item.food.price * item.quantity}
+                  {/* Label */}
+                  <p
+                    className={`mt-2 text-sm ${
+                      activeCategory === cat.name
+                        ? "text-orange-500"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    {cat.name}
                   </p>
                 </div>
               ))}
             </div>
-          )}
-          {/* total */}
-          <div className="mt-6 border-t pt-4">
-            <p className="font-semibold">Total : ₹{totalPrice} </p>
+            {/* foodGrid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {filteredFoods.map((food) => (
+                <div
+                  key={food._id}
+                  className="bg-[#1a1a1a] p-4 rounded-xl shadow-md
+                             hover:shadow-orange-500/40
+                              hover:scale-105
+                              transition duration-300 ease-in-out cursor-pointer"
+                >
+                  <img
+                    src={`${food.image}?w=400&h=300&fit=crop`}
+                    loading="lazy"
+                    className="w-full h-32 sm:h-40 object-cover rounded"
+                  />
+                  <h3 className="mt-3 font-semibold text-lg">{food.name}</h3>
+                  <p className="text-gray-300 text-sm">₹{food.price}</p>
+                  <p className="text-gray-400 text-sm">{food.category}</p>
+                  <button
+                    onClick={() => addToCart(food)}
+                    className="mt-3 w-full bg-orange-500 text-white py-2 rounded-lg
+                              hover:bg-orange-600 active:scale-95 transition"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <Link
-            to="/cart"
-            className="mt-6 w-full bg-orange-500 text-white py-2 rounded block text-center"
-          >
-            View Cart
-          </Link>
+          {/* Right Cart */}
+          <div className="hidden lg:block w-72 bg-[#1a1a1a] p-5 shadow-lg">
+            <h2 className="text-xl font-semibold mb-4">Your Feast 🍔</h2>
+            {cart.length === 0 ? (
+              <p className="text-gray-500 text-sm">Your cart is empty 🥲</p>
+            ) : (
+              <div className="space-y-4">
+                {cart.map((item) => (
+                  <div
+                    key={item.food._id}
+                    className="flex justify-between items-center"
+                  >
+                    <div>
+                      <p className="font-medium">{item.food.name}</p>
+                      <p className="text-sm text-gray-400">x{item.quantity}</p>
+                    </div>
+                    <p className="text-sm text-orange-500">
+                      ₹{item.food.price * item.quantity}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {/* total */}
+            <div className="mt-6 border-t pt-4">
+              <p className="font-semibold">Total : ₹{totalPrice} </p>
+            </div>
+            <Link
+              to="/cart"
+              className="mt-6 w-full bg-orange-500 text-white py-2 rounded block text-center"
+            >
+              View Cart
+            </Link>
+          </div>
         </div>
-      </div>
+      </Layout>
+       
     </>
+    
   );
 };
 export default Home;
