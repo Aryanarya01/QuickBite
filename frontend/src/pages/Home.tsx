@@ -10,6 +10,8 @@ const Home = () => {
   const { addToCart, cart, totalPrice } = useCart();
    
   const [foods, setFoods] = useState<Food[]>([]);
+  const [search,setSearch] = useState("");
+
   const categories = [
     { name: "All", icon: "🍽️" },
     { name: "Burger", icon: "🍔" },
