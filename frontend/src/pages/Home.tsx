@@ -48,6 +48,8 @@ const Home = () => {
           <input
             type="text"
             placeholder="Search food..."
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
             className="w-full p-3 rounded-full border mb-6 bg-[#1a1a1a] border-orange-500 outline-none shadow-[0_0_10px_rgba(255,115,0,0.5)] "
           />
 
